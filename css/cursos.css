@@ -1,2 +1,18 @@
 .academic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.academic-card{padding:30px;border:1px solid #dfe6ee;border-radius:8px}.academic-card .eyebrow{display:block;margin-bottom:18px}.academic-card h2{font-size:24px;letter-spacing:-.5px}.academic-card p{font-size:14px;margin-top:16px}.academic-card:first-child{grid-column:1/-1;background:#f2f6fb}@media(max-width:650px){.academic-grid{grid-template-columns:1fr}.academic-card{padding:24px}}
 .project-image{display:block;width:100%;height:180px;object-fit:cover;margin-bottom:20px;border-radius:5px}.project-card .text-link,.teacher-card .text-link{display:block;color:#1976d2;margin-top:16px}.teacher-card img.avatar{object-fit:cover}
+
+.control-course .page-intro{padding-bottom:28px}
+.topic-index{display:block;padding:25px 30px;background:#f2f6fb;border:1px solid #dae5f0;border-radius:10px;margin-bottom:38px;scroll-margin-top:155px}
+.topic-index .eyebrow{margin-bottom:18px}
+.topic-index ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px;list-style:none;counter-reset:topics;margin:0;padding:0}
+.topic-index li{counter-increment:topics}
+.topic-index a{display:flex;gap:12px;align-items:baseline;font-size:14px;font-weight:600;padding:12px 0;line-height:1.5;border-bottom:1px solid #d7e3ee;color:#12345b}
+.topic-index a::before{content:counter(topics,decimal-leading-zero);color:#1976d2;font-size:11px;font-weight:700}
+.topic-index a:hover{color:#1976d2;border-color:#1976d2}
+.topic-section{padding:35px 0;border-top:1px solid #dfe6ee;scroll-margin-top:155px;min-height:220px}
+.topic-section h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.025em}
+.topic-section .eyebrow{margin-bottom:13px}
+.topic-pending{color:#748094;font-size:14px;margin:20px 0 24px}
+.topic-text{white-space:pre-wrap;margin:20px 0 24px}
+@media(max-width:850px){.topic-index ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.topic-index{padding:22px}.topic-index ol{grid-template-columns:1fr;gap:2px}.topic-section{min-height:210px}}
