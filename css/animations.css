@@ -1,0 +1,1 @@
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}.orbit-two{animation:breathe 7s ease-in-out infinite}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}

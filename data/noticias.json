@@ -1,0 +1,23 @@
+[
+  {
+    "id": "bienvenida",
+    "title": "Un espacio para aprender en comunidad",
+    "date": "2026-11-13",
+    "description": "Conoce la propuesta de electromecánica de STEAM Works.",
+    "body": "Noticia demostrativa. Este espacio permitirá difundir novedades de la plataforma. Sustituye este texto por un aviso validado por el equipo docente."
+  },
+  {
+    "id": "laboratorio",
+    "title": "Del aula al laboratorio de ideas",
+    "date": "2026-11-13",
+    "description": "Una mirada a los espacios preparados para futuros proyectos.",
+    "body": "Aviso demostrativo. No corresponde a una convocatoria ni a una actividad programada. Los proyectos se incorporarán cuando exista información validada."
+  },
+  {
+    "id": "recursos",
+    "title": "Construyamos nuestra biblioteca de recursos",
+    "date": "2026-11-13",
+    "description": "Materiales organizados dentro de cada asignatura.",
+    "body": "Noticia demostrativa. Los materiales y las referencias serán revisados por los docentes antes de incorporarse a cada curso."
+  }
+]

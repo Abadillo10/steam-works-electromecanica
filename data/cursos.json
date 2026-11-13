@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "controladores-logicos-programables",
+    "title": "Controladores Lógicos Programables",
+    "area": "Automatización",
+    "number": "01"
+  },
+  {
+    "slug": "mecanica-de-fluidos",
+    "title": "Mecánica de Fluidos",
+    "area": "Ingeniería",
+    "number": "02"
+  },
+  {
+    "slug": "control-clasico",
+    "title": "Control Clásico",
+    "area": "Control",
+    "number": "03"
+  },
+  {
+    "slug": "seminario-de-investigacion",
+    "title": "Seminario de Investigación",
+    "area": "Investigación",
+    "number": "04"
+  },
+  {
+    "slug": "termodinamica",
+    "title": "Termodinámica",
+    "area": "Energía",
+    "number": "05"
+  },
+  {
+    "slug": "modelado-sistemas-fotovoltaicos",
+    "title": "Modelado de Sistemas Fotovoltaicos",
+    "area": "Energía",
+    "number": "06"
+  },
+  {
+    "slug": "maquinas-termicas",
+    "title": "Máquinas Térmicas",
+    "area": "Ingeniería",
+    "number": "07"
+  },
+  {
+    "slug": "refrigeracion-aire-acondicionado",
+    "title": "Refrigeración y Aire Acondicionado",
+    "area": "Ingeniería",
+    "number": "08"
+  },
+  {
+    "slug": "probabilidad-estadistica",
+    "title": "Probabilidad y Estadística",
+    "area": "Matemáticas",
+    "number": "09"
+  },
+  {
+    "slug": "diseno-elementos-maquina",
+    "title": "Diseño de Elementos de Máquina",
+    "area": "Diseño",
+    "number": "10"
+  }
+]
