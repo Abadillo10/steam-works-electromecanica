@@ -1,67 +1,119 @@
 {
   "title": "Conceptos fundamentales y propiedades de fluidos",
-  "intro": "",
+  "intro": "Propiedades de los fluidos: una introducción al comportamiento de líquidos y gases antes de estudiar su movimiento y las fuerzas que actúan en ellos.",
   "objectives": [],
   "topics": [
     {
       "id": "conceptos",
       "number": "1.1",
       "title": "Conceptos de fluidos",
-      "paragraphs": []
+      "paragraphs": [
+        "La mecánica de fluidos estudia los líquidos y los gases, tanto en reposo como en movimiento, así como su interacción con superficies y con otros fluidos. El estudio del reposo corresponde a la estática de fluidos; el del movimiento, a la dinámica de fluidos.",
+        "La diferencia entre un sólido y un fluido se aprecia al aplicar un esfuerzo cortante: el sólido puede equilibrarlo con una deformación estática, mientras que el fluido continúa deformándose mientras el esfuerzo actúe. Por eso, un fluido en reposo no mantiene esfuerzos cortantes.",
+        "En muchas aplicaciones de ingeniería se utiliza la hipótesis de medio continuo. En lugar de seguir cada molécula, se describen valores locales de presión, temperatura, velocidad y densidad, promediados sobre una región suficientemente pequeña para el análisis y suficientemente grande a escala molecular."
+      ]
     },
     {
       "id": "densidad",
       "number": "1.2",
       "title": "Densidad",
-      "paragraphs": []
+      "paragraphs": [
+        "La densidad expresa cuánta masa hay en un volumen de fluido. Para una muestra homogénea se obtiene dividiendo su masa entre el volumen que ocupa.",
+        "Debe distinguirse de la viscosidad: la densidad cuantifica masa por volumen; la viscosidad caracteriza la respuesta al movimiento relativo de las capas del fluido."
+      ],
+      "formula": "ρ = m / V",
+      "symbols": "ρ en kg/m³; m en kg; V en m³."
     },
     {
       "id": "peso-especifico",
       "number": "1.3",
       "title": "Peso específico",
-      "paragraphs": []
+      "paragraphs": [
+        "El peso específico relaciona el peso de un fluido con el volumen que ocupa. Se calcula a partir de su densidad y de la aceleración de la gravedad.",
+        "La masa se expresa en kilogramos y el peso en newtons; por ello, el peso específico se expresa en N/m³, mientras que la densidad se expresa en kg/m³."
+      ],
+      "formula": "γ = ρg",
+      "symbols": "γ en N/m³; ρ en kg/m³; g en m/s²."
     },
     {
       "id": "volumen-especifico",
       "number": "1.4",
       "title": "Volumen específico",
-      "paragraphs": []
+      "paragraphs": [
+        "El volumen específico es el volumen correspondiente a una unidad de masa. Para un mismo estado del fluido, es el recíproco de la densidad."
+      ],
+      "formula": "v = V / m = 1 / ρ",
+      "symbols": "v en m³/kg. El símbolo v representa volumen específico; V representa volumen total."
     },
     {
       "id": "gravedad-especifica",
       "number": "1.5",
       "title": "Gravedad específica",
-      "paragraphs": []
+      "paragraphs": [
+        "La gravedad específica, también llamada densidad relativa, compara la densidad del fluido con una densidad de referencia. Para líquidos se utiliza habitualmente agua, indicando las condiciones de referencia.",
+        "Al dividir densidades con las mismas unidades, el resultado es adimensional. La misma relación puede expresarse como un cociente de pesos específicos cuando ambos corresponden a la misma aceleración gravitacional."
+      ],
+      "formula": "SG = ρ / ρref = γ / γref",
+      "symbols": "SG no tiene unidades. La calculadora usa agua a 4 °C y 101325 Pa como referencia."
     },
     {
       "id": "viscosidad",
       "number": "1.6",
       "title": "Viscosidad absoluta y viscosidad cinemática",
-      "paragraphs": []
+      "paragraphs": [
+        "La viscosidad describe la resistencia al deslizamiento de capas de un fluido. Cuando las capas se desplazan a velocidades diferentes, aparece un esfuerzo cortante asociado al gradiente transversal de velocidad.",
+        "Para un fluido newtoniano, la viscosidad dinámica μ es la constante de proporcionalidad entre ese esfuerzo y el gradiente de velocidad. La viscosidad cinemática ν se obtiene dividiendo μ entre la densidad.",
+        "La temperatura influye de manera importante: en condiciones habituales, la viscosidad de los líquidos disminuye al calentarlos y la de los gases aumenta. La presión también puede influir y no debe ignorarse sin considerar el intervalo de operación."
+      ],
+      "formula": "τ = μ (du/dy)     ·     ν = μ / ρ",
+      "symbols": "τ en Pa; du/dy en s⁻¹; μ en Pa·s; ν en m²/s. 1 P = 0.1 Pa·s; 1 St = 10⁻⁴ m²/s."
     },
     {
       "id": "newtonianos",
       "number": "1.7",
       "title": "Fluido newtoniano y no newtoniano",
-      "paragraphs": []
+      "paragraphs": [
+        "En un fluido newtoniano, el esfuerzo cortante es proporcional al gradiente de velocidad. A temperatura y presión dadas, su representación gráfica es una recta que pasa por el origen y cuya pendiente corresponde a la viscosidad dinámica.",
+        "En un fluido no newtoniano, esa relación no puede describirse mediante una única viscosidad constante. Algunos materiales presentan un esfuerzo de cedencia: antes de superarlo no muestran el comportamiento de flujo previsto por el modelo plástico.",
+        "El fluido ideal es una simplificación en la que se desprecia la resistencia viscosa a la deformación cortante. Su utilidad depende de las condiciones del análisis; no debe confundirse con un fluido real sin efectos viscosos."
+      ],
+      "formula": "τ = μ (du/dy)",
+      "symbols": "Relación para un fluido newtoniano; μ es la pendiente de τ frente a du/dy."
     },
     {
       "id": "modelo-volumetrico",
       "number": "1.8",
       "title": "Modelo volumétrico",
-      "paragraphs": []
+      "paragraphs": [
+        "La compresibilidad describe cómo cambian el volumen y la densidad de un fluido al variar su presión. Si la masa permanece constante, una reducción del volumen implica un aumento de la densidad.",
+        "El módulo de elasticidad volumétrica relaciona el incremento de presión con la reducción relativa del volumen. Su signo negativo permite que el módulo sea positivo cuando un aumento de presión produce una disminución del volumen.",
+        "Muchos cálculos de líquidos admiten la aproximación de incompresibilidad porque las variaciones de volumen son pequeñas. En fenómenos con cambios intensos o rápidos de presión, como el golpe de ariete, esa aproximación necesita revisarse."
+      ],
+      "formula": "K = −V (dp/dV)",
+      "symbols": "K en Pa. La condición térmica debe indicarse; la calculadora presenta el módulo isotérmico Kₜ."
     },
     {
       "id": "tension-superficial",
       "number": "1.9",
       "title": "Tensión superficial",
-      "paragraphs": []
+      "paragraphs": [
+        "Las moléculas próximas a la superficie de un líquido no tienen el mismo entorno que las del interior. Crear superficie requiere trabajo, por lo que la interfaz posee una energía asociada.",
+        "La tensión superficial permite describir ese comportamiento de la interfaz. Interviene, por ejemplo, en la formación de gotas y en fuerzas asociadas al contacto con la superficie del líquido."
+      ],
+      "formula": "σ: tensión superficial",
+      "symbols": "Unidad SI: N/m, equivalente a J/m²."
     },
     {
       "id": "presion",
       "number": "1.10",
       "title": "Presión",
-      "paragraphs": []
+      "paragraphs": [
+        "La presión representa una fuerza normal por unidad de área. Su unidad en el Sistema Internacional es el pascal, equivalente a un newton por metro cuadrado.",
+        "La presión absoluta toma como referencia el vacío. La presión manométrica se mide respecto de la presión atmosférica local, mientras que una lectura de vacío expresa cuánto se encuentra la presión por debajo de la atmosférica.",
+        "La presión manométrica puede ser negativa cuando la presión del sistema es menor que la atmosférica. Antes de operar con mediciones, es necesario identificar la referencia utilizada por cada instrumento."
+      ],
+      "formula": "pman = pabs − patm     ·     pvac = patm − pabs",
+      "symbols": "1 Pa = 1 N/m². pvac expresa una magnitud positiva para un sistema por debajo de patm."
     },
     {
       "id": "flujo",
@@ -72,5 +124,6 @@
   ],
   "exercises": [],
   "activity": "",
-  "sources": []
+  "sources": [],
+  "materialSource": "Adaptación del capítulo «Propiedades de los fluidos» del manual docente de Mecánica de Fluidos (2022), proporcionado para esta plataforma."
 }
