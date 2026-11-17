@@ -13,6 +13,6 @@ if(!html.includes('fluido-calculadora.js'))html=html.replace('</head>','<script 
 html=html.replace('href="../css/fluidos.css"','href="../css/fluidos.css?v=calculadora-1"');
 fs.writeFileSync(target,html);
 const overviewPath=path.join(root,'cursos/mecanica-de-fluidos.html');
-let overview=fs.readFileSync(overviewPath,'utf8').replace('Conceptos, propiedades, fórmulas y ejemplos para comenzar.','Temario preparado. Contenido pendiente de incorporación.').replace('Estudiar la Unidad 1 →','Ver temario de la Unidad 1 →');
+let overview=fs.readFileSync(overviewPath,'utf8').replace('Conceptos, propiedades, fórmulas y ejemplos para comenzar.','Material del manual docente y calculadora interactiva de propiedades.').replace('Estudiar la Unidad 1 →','Abrir la Unidad 1 →').replace('Temario preparado. Contenido pendiente de incorporación.','Material del manual docente y calculadora interactiva de propiedades.').replace('Ver temario de la Unidad 1 →','Abrir la Unidad 1 →');
 fs.writeFileSync(overviewPath,overview);
 console.log('Unidad 1: material del manual y calculadora de propiedades actualizados.');
