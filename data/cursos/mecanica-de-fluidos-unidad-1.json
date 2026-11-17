@@ -1,96 +1,76 @@
 {
   "title": "Conceptos fundamentales y propiedades de fluidos",
-  "intro": "Antes de estudiar tuberías, bombas y sistemas hidráulicos, necesitamos describir el fluido: cuánta masa contiene, cómo responde al esfuerzo cortante y qué ocurre cuando cambia su presión. Esta unidad conecta esas propiedades con situaciones de ingeniería electromecánica.",
-  "objectives": ["Distinguir líquidos, gases y modelos de fluido.", "Relacionar densidad, peso específico, volumen específico y gravedad específica con sus unidades.", "Interpretar viscosidad, compresibilidad, tensión superficial, presión y caudal.", "Resolver problemas introductorios y comprobar la coherencia de las unidades."],
+  "intro": "",
+  "objectives": [],
   "topics": [
     {
-      "id": "conceptos", "number": "1.1", "title": "Conceptos de fluidos",
-      "paragraphs": ["Un fluido se deforma continuamente mientras actúa sobre él un esfuerzo cortante, por pequeño que sea. Tanto los líquidos como los gases son fluidos. En reposo no sostienen un esfuerzo cortante estático como lo hace un sólido elástico.", "Un líquido conserva aproximadamente su volumen y puede formar una superficie libre. Un gas se expande hasta ocupar el recipiente. La aproximación de medio continuo permite asignar propiedades como densidad y presión a cada punto; es apropiada cuando la escala de estudio es mucho mayor que la separación molecular.", "Los modelos simplifican la realidad: un fluido incompresible se representa con densidad constante y uno ideal se considera sin viscosidad. Su uso depende del problema; no significa que los fluidos reales carezcan de viscosidad o compresibilidad."],
-      "application": "El agua de enfriamiento, el aceite de un sistema hidráulico y el aire de una instalación neumática requieren modelos diferentes.",
-      "question": "¿Por qué un gas y un líquido pueden fluir, aunque solo el líquido presente una superficie libre en un recipiente abierto?"
+      "id": "conceptos",
+      "number": "1.1",
+      "title": "Conceptos de fluidos",
+      "paragraphs": []
     },
     {
-      "id": "densidad", "number": "1.2", "title": "Densidad",
-      "paragraphs": ["La densidad relaciona la masa con el volumen que ocupa. Para una muestra uniforme se calcula dividiendo ambas magnitudes. En un fluido no uniforme se interpreta como una propiedad local.", "La densidad depende del estado del fluido, en particular de la temperatura y la presión. Cuando se utiliza una tabla de propiedades deben registrarse esas condiciones. No debe confundirse una densidad alta con una viscosidad alta."],
-      "formula": "ρ = m / V", "symbols": "ρ: densidad [kg/m³]; m: masa [kg]; V: volumen [m³].",
-      "example": "Una muestra de aceite tiene masa de 1.70 kg y volumen de 2.00 L. Primero: 2.00 L = 0.00200 m³. Entonces ρ = 1.70 / 0.00200 = 850 kg/m³. Datos ilustrativos, no una propiedad universal de los aceites.",
-      "question": "Si una muestra homogénea se divide a la mitad sin cambiar temperatura ni presión, ¿cambia su densidad?"
+      "id": "densidad",
+      "number": "1.2",
+      "title": "Densidad",
+      "paragraphs": []
     },
     {
-      "id": "peso-especifico", "number": "1.3", "title": "Peso específico",
-      "paragraphs": ["El peso específico es el peso por unidad de volumen. A diferencia de la densidad, incluye la aceleración de la gravedad: masa y peso no son la misma magnitud.", "En los ejemplos se adopta g = 9.81 m/s² como aproximación terrestre. Si cambia la gravedad, cambia el peso específico, aunque la densidad se mantenga."],
-      "formula": "γ = W / V = ρg", "symbols": "γ: peso específico [N/m³]; W: peso [N]; ρ: densidad [kg/m³]; g: gravedad [m/s²].",
-      "example": "Para el aceite del ejemplo anterior: γ = 850 × 9.81 = 8338.5 N/m³ ≈ 8.34 kN/m³.",
-      "question": "¿Por qué expresar el peso específico en kg/m³ confunde dos propiedades distintas?"
+      "id": "peso-especifico",
+      "number": "1.3",
+      "title": "Peso específico",
+      "paragraphs": []
     },
     {
-      "id": "volumen-especifico", "number": "1.4", "title": "Volumen específico",
-      "paragraphs": ["El volumen específico indica cuánto volumen corresponde a una unidad de masa. Es el inverso de la densidad para un mismo estado y una misma muestra.", "Se representa aquí con v para distinguirlo del volumen total V. Cuanto mayor sea la densidad, menor será el volumen que ocupa cada kilogramo."],
-      "formula": "v = V / m = 1 / ρ", "symbols": "v: volumen específico [m³/kg]; V: volumen [m³]; m: masa [kg].",
-      "example": "Para ρ = 850 kg/m³: v = 1 / 850 ≈ 0.00118 m³/kg = 1.18 L/kg.",
-      "question": "Si la densidad de un gas disminuye a la mitad, ¿qué sucede con su volumen específico?"
+      "id": "volumen-especifico",
+      "number": "1.4",
+      "title": "Volumen específico",
+      "paragraphs": []
     },
     {
-      "id": "gravedad-especifica", "number": "1.5", "title": "Gravedad específica",
-      "paragraphs": ["La gravedad específica o densidad relativa compara la densidad de una sustancia con la de una referencia. Es adimensional porque se dividen magnitudes con las mismas unidades.", "Para líquidos suele usarse agua, indicando las condiciones de referencia; para gases puede usarse aire. En los ejercicios introductorios adoptamos ρref = 1000 kg/m³ como valor aproximado del agua. La referencia debe declararse y no suponerse universal."],
-      "formula": "SG = ρ / ρref", "symbols": "SG: gravedad específica [sin unidades]; ρref: densidad de referencia [kg/m³].",
-      "example": "Si el aceite tiene ρ = 850 kg/m³ y la referencia es 1000 kg/m³: SG = 0.850. No se escribe 0.850 kg/m³.",
-      "question": "¿Qué información falta cuando se comunica una densidad relativa sin indicar la sustancia de referencia?"
+      "id": "gravedad-especifica",
+      "number": "1.5",
+      "title": "Gravedad específica",
+      "paragraphs": []
     },
     {
-      "id": "viscosidad", "number": "1.6", "title": "Viscosidad absoluta y viscosidad cinemática",
-      "paragraphs": ["La viscosidad dinámica o absoluta μ relaciona el esfuerzo cortante con la rapidez de deformación en un fluido newtoniano. Describe la resistencia al deslizamiento relativo de capas, no la cantidad de masa de una muestra.", "La viscosidad cinemática ν es la viscosidad dinámica dividida entre la densidad. Conviene identificar el símbolo y las unidades antes de sustituir datos. La viscosidad suele disminuir al aumentar la temperatura en líquidos y aumentar en gases, dentro de condiciones habituales."],
-      "formula": "τ = μ (du/dy)     ·     ν = μ / ρ", "symbols": "τ: esfuerzo cortante [Pa]; du/dy: gradiente de velocidad [s⁻¹]; μ: viscosidad dinámica [Pa·s]; ν: viscosidad cinemática [m²/s].",
-      "example": "Para un fluido con μ = 0.100 Pa·s y ρ = 850 kg/m³: ν ≈ 1.18 × 10⁻⁴ m²/s = 118 mm²/s. Recordatorio: 1 cP = 0.001 Pa·s y 1 cSt = 1 mm²/s = 10⁻⁶ m²/s.",
-      "question": "¿Se pueden comparar directamente un valor en cP y otro en cSt? Explica qué dato necesitas."
+      "id": "viscosidad",
+      "number": "1.6",
+      "title": "Viscosidad absoluta y viscosidad cinemática",
+      "paragraphs": []
     },
     {
-      "id": "newtonianos", "number": "1.7", "title": "Fluido newtoniano y no newtoniano",
-      "paragraphs": ["En un fluido newtoniano, a temperatura y presión dadas, el esfuerzo cortante es proporcional a la rapidez de deformación: la gráfica τ frente a du/dy es una recta que pasa por el origen. Su pendiente es μ. Agua y aire se aproximan bien a este modelo en muchas aplicaciones ordinarias.", "En un fluido no newtoniano, la respuesta no se describe mediante una única viscosidad constante independiente de la rapidez de deformación. Puede presentar adelgazamiento por corte, espesamiento por corte, esfuerzo de cedencia o dependencia del tiempo.", "Algunas pinturas y soluciones poliméricas se adelgazan por corte; ciertas suspensiones concentradas se espesan. La clasificación depende de la formulación y de las condiciones de ensayo, no solo del nombre comercial del material."],
-      "formula": "Newtoniano: τ = μ γ̇     ·     Viscosidad aparente: μap = τ / γ̇, para γ̇ ≠ 0", "symbols": "γ̇: rapidez de deformación [s⁻¹]; μap: viscosidad aparente [Pa·s].",
-      "example": "Con μ = 0.050 Pa·s, si γ̇ aumenta de 10 a 20 s⁻¹, un fluido newtoniano pasa de τ = 0.50 a 1.00 Pa. Duplicar γ̇ duplica τ.",
-      "question": "¿Por qué una curva de esfuerzo cortante no lineal exige algo más que una viscosidad constante?"
+      "id": "newtonianos",
+      "number": "1.7",
+      "title": "Fluido newtoniano y no newtoniano",
+      "paragraphs": []
     },
     {
-      "id": "modelo-volumetrico", "number": "1.8", "title": "Modelo volumétrico",
-      "paragraphs": ["Este apartado se desarrolla como compresibilidad y módulo volumétrico de elasticidad, interpretación del término «Modelo volumétrico» que aparece en el temario proporcionado. El módulo K mide cuánto aumento de presión se requiere para producir una pequeña reducción relativa del volumen.", "Un K grande indica poca compresibilidad. El signo negativo hace que K sea positivo: al aumentar la presión, el volumen disminuye. La aproximación con incrementos supone cambios pequeños y un módulo aproximadamente constante.", "Debe indicarse la condición térmica del proceso. En gases, la respuesta isotérmica y la adiabática difieren. Considerar un líquido incompresible puede ser útil para un cálculo, pero su compresibilidad importa en fenómenos transitorios."],
-      "formula": "K = −V (dp/dV)     ·     ΔV / V ≈ −Δp / K", "symbols": "K: módulo volumétrico [Pa]; Δp: incremento de presión [Pa]; ΔV/V: variación relativa del volumen [sin unidades].",
-      "example": "Un líquido hipotético tiene K = 2.0 GPa. Para Δp = 1.0 MPa: ΔV/V ≈ −0.00050 = −0.050 %. Si el volumen inicial es 1.0 L, la reducción aproximada es 0.50 mL.",
-      "question": "¿Un módulo volumétrico mayor implica que el fluido es más fácil o más difícil de comprimir?"
+      "id": "modelo-volumetrico",
+      "number": "1.8",
+      "title": "Modelo volumétrico",
+      "paragraphs": []
     },
     {
-      "id": "tension-superficial", "number": "1.9", "title": "Tensión superficial",
-      "paragraphs": ["La tensión superficial caracteriza la respuesta de una interfaz entre dos fases. Puede interpretarse como fuerza tangencial por unidad de longitud o energía necesaria por unidad de área creada. Se relaciona con la tendencia de gotas pequeñas a reducir su superficie.", "En capilaridad también intervienen la humectación, el ángulo de contacto y el radio del conducto. No toda superficie produce un ascenso: el signo de cos θ determina ascenso o descenso en el modelo de tubo capilar."],
-      "formula": "σ = F / L     ·     h = 2σ cos θ / (ρgr)", "symbols": "σ: tensión superficial [N/m]; L: longitud efectiva de interfaz [m]; h: altura capilar [m]; r: radio interior [m]; θ: ángulo de contacto. Fórmula capilar: equilibrio, tubo circular estrecho y densidad del gas despreciable.",
-      "example": "Con σ = 0.072 N/m, θ = 0°, ρ = 1000 kg/m³, g = 9.81 m/s² y r = 0.00050 m: h ≈ 0.0294 m = 2.94 cm. Son valores ilustrativos de un caso idealizado.",
-      "question": "¿Qué ocurre con la altura capilar ideal si el radio del tubo se reduce a la mitad?"
+      "id": "tension-superficial",
+      "number": "1.9",
+      "title": "Tensión superficial",
+      "paragraphs": []
     },
     {
-      "id": "presion", "number": "1.10", "title": "Presión",
-      "paragraphs": ["La presión es fuerza normal por unidad de área. La expresión p = Fnormal/A representa un valor promedio sobre el área; en un punto se define mediante el límite de áreas pequeñas. En reposo la presión de un fluido actúa en todas las direcciones.", "La presión absoluta se mide desde el vacío; la manométrica, respecto de la presión atmosférica local. Una lectura manométrica negativa no significa presión absoluta negativa, sino presión inferior a la atmosférica.", "En el SI: 1 Pa = 1 N/m² y 1 bar = 100 000 Pa. Antes de usar una presión en una ecuación hay que identificar su referencia. La distribución con la profundidad se estudiará en Hidrostática."],
-      "formula": "p = Fnormal / A     ·     pabs = pman + patm", "symbols": "p: presión [Pa]; Fnormal: fuerza normal [N]; A: área [m²].",
-      "example": "Una fuerza normal de 600 N distribuida en 0.0030 m² produce p = 200 000 Pa = 200 kPa. Por separado, un manómetro que indique 200 kPa con patm = 101 kPa corresponde a 301 kPa absolutos.",
-      "question": "Un instrumento marca −20 kPa manométricos y la presión atmosférica local es 100 kPa. ¿Cuál es la presión absoluta?"
+      "id": "presion",
+      "number": "1.10",
+      "title": "Presión",
+      "paragraphs": []
     },
     {
-      "id": "flujo", "number": "1.11", "title": "Flujo",
-      "paragraphs": ["El flujo describe el movimiento del fluido. El caudal volumétrico Q indica el volumen que atraviesa una sección por unidad de tiempo; el flujo másico ṁ indica la masa que la atraviesa por unidad de tiempo.", "Para velocidad normal media ū sobre una sección, Q = Aū. Si además la densidad es uniforme en esa sección, ṁ = ρQ. No debe confundirse la velocidad, expresada en m/s, con el caudal, expresado en m³/s.", "Un flujo permanente tiene propiedades que no cambian con el tiempo en cada punto. Un flujo uniforme no cambia espacialmente en la dirección considerada. Laminar y turbulento describen regímenes distintos de movimiento; su análisis mediante Reynolds corresponde a Hidrodinámica."],
-      "formula": "Q = ΔV / Δt (promedio)     ·     Q = Aū     ·     ṁ = ρQ", "symbols": "Q: caudal volumétrico [m³/s]; ṁ: flujo másico [kg/s]; ū: velocidad normal media [m/s]; A: área [m²].",
-      "example": "En una tubería circular de diámetro 0.020 m con ū = 1.5 m/s: A = πD²/4 ≈ 0.000314 m² y Q ≈ 0.000471 m³/s = 0.471 L/s. Si ρ = 1000 kg/m³, ṁ ≈ 0.471 kg/s.",
-      "question": "¿Qué velocidad media corresponde a Q = 0.0020 m³/s y A = 0.0010 m²?"
+      "id": "flujo",
+      "number": "1.11",
+      "title": "Flujo",
+      "paragraphs": []
     }
   ],
-  "exercises": [
-    {"question":"Una muestra de 3.00 L tiene una masa de 2.40 kg. Calcula ρ, γ, v y SG con g = 9.81 m/s² y ρref = 1000 kg/m³.","answer":"ρ = 800 kg/m³; γ = 7848 N/m³; v = 0.00125 m³/kg; SG = 0.800."},
-    {"question":"Un fluido tiene μ = 0.080 Pa·s y ρ = 800 kg/m³. Calcula ν en m²/s y en cSt.","answer":"ν = 0.080/800 = 0.000100 m²/s = 100 cSt."},
-    {"question":"Una presión manométrica de −20 kPa se mide donde patm = 100 kPa. Determina la presión absoluta.","answer":"pabs = −20 + 100 = 80 kPa. Se encuentra por debajo de la presión atmosférica, pero por encima del vacío."},
-    {"question":"Un depósito entrega 12 L en 30 s. Calcula el caudal promedio y el flujo másico promedio si ρ = 1000 kg/m³.","answer":"Q = 0.012/30 = 0.000400 m³/s = 0.400 L/s; ṁ = 0.400 kg/s."}
-  ],
-  "activity": "Construye una tabla comparativa de agua, aire y un aceite: propiedad, símbolo, unidades SI, temperatura, presión, valor y fuente. No compares valores tabulados sin comprobar sus condiciones. Después explica qué propiedades revisarías al seleccionar un fluido para refrigeración, lubricación y transmisión hidráulica.",
-  "sources": [
-    {"label":"OpenStax · Fluidos, densidad y presión", "url":"https://openstax.org/books/university-physics-volume-1/pages/14-1-fluids-density-and-pressure"},
-    {"label":"OpenStax · Viscosidad y turbulencia", "url":"https://openstax.org/books/university-physics-volume-1/pages/14-7-viscosity-and-turbulence"},
-    {"label":"OpenStax · Módulo de elasticidad volumétrico", "url":"https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus"},
-    {"label":"OpenStax · Dinámica de fluidos y caudal", "url":"https://openstax.org/books/university-physics-volume-1/pages/14-5-fluid-dynamics"}
-  ]
+  "exercises": [],
+  "activity": "",
+  "sources": []
 }
