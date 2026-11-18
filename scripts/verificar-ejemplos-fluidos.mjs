@@ -5,10 +5,11 @@ const data=JSON.parse(fs.readFileSync(new URL('data/cursos/mecanica-de-fluidos-u
 const html=fs.readFileSync(new URL('cursos/mecanica-de-fluidos-unidad-1.html',root),'utf8');
 assert.equal(data.topics.length,11);
 assert(data.topics.every(t=>t.examples.length>0));
-assert.equal(data.topics.flatMap(t=>t.examples).length,13);
-assert.equal((html.match(/class="example-columns"/g)||[]).length,13);
-assert.equal((html.match(/class="example-problem"/g)||[]).length,13);
-assert.equal((html.match(/class="example-solution"/g)||[]).length,13);
+const exampleCount=data.topics.flatMap(t=>t.examples).length;
+assert.equal(exampleCount,16);
+assert.equal((html.match(/class="example-columns"/g)||[]).length,exampleCount);
+assert.equal((html.match(/class="example-problem"/g)||[]).length,exampleCount);
+assert.equal((html.match(/class="example-solution"/g)||[]).length,exampleCount);
 for(const id of ['flujo-volumetrico','flujo-masico','continuidad-castelli','lectura-castelli','video-upv'])assert(html.includes(`id="${id}"`));
 assert.equal(data.topics[0].comparison.rows.length,9);
 assert(html.includes('scope="col"')&&html.includes('scope="row"'));
@@ -21,4 +22,10 @@ near(0.14/800*1e6,175);near(2/50,4/100);
 near(-1*2e6/2.2e9,-0.0009090909090909091);near(2*0.03*0.05,0.003);
 near(92-24,68);near(0.04/25,0.0016);near(998*0.0016,1.5968);
 near(0.8*(0.04/0.02)**2,3.2);near(Math.PI*0.04**2*0.8/4,Math.PI*0.02**2*3.2/4);
-console.log('Correcto: 13 ejemplos en 11 subtemas, cálculos, tabla comparativa, lectura y video.');
+near(47000/6/9.81,798.5049269452938,1e-6);
+near((1500-110)/0.159/9.81,891.1456029337281,1e-6);
+near(-0.030*(250-35)*98066.5/(0.02970-0.030),2108429750,0.001);
+for(const title of ['Aceite: del peso a sus propiedades','Barril de aceite: descontar el recipiente','Módulo volumétrico a partir de mediciones']) {
+  assert(html.includes(title));
+}
+console.log(`Correcto: ${exampleCount} ejemplos en 11 subtemas, cálculos, tabla comparativa, lectura y video.`);
