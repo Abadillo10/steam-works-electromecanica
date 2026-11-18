@@ -11,7 +11,119 @@
         "La mecánica de fluidos estudia los líquidos y los gases, tanto en reposo como en movimiento, así como su interacción con superficies y con otros fluidos. El estudio del reposo corresponde a la estática de fluidos; el del movimiento, a la dinámica de fluidos.",
         "La diferencia entre un sólido y un fluido se aprecia al aplicar un esfuerzo cortante: el sólido puede equilibrarlo con una deformación estática, mientras que el fluido continúa deformándose mientras el esfuerzo actúe. Por eso, un fluido en reposo no mantiene esfuerzos cortantes.",
         "En muchas aplicaciones de ingeniería se utiliza la hipótesis de medio continuo. En lugar de seguir cada molécula, se describen valores locales de presión, temperatura, velocidad y densidad, promediados sobre una región suficientemente pequeña para el análisis y suficientemente grande a escala molecular."
-      ]
+      ],
+      "examples": [
+        {
+          "title": "Identificar el comportamiento de un fluido",
+          "statement": "Un bloque elástico y una muestra de agua se someten por separado a un esfuerzo cortante constante. El bloque alcanza una deformación estable; el agua sigue deformándose mientras actúa el esfuerzo.",
+          "given": [],
+          "goal": "Identificar cuál muestra presenta comportamiento de fluido y justificarlo.",
+          "steps": [
+            {
+              "label": "Reconocer la acción",
+              "text": "El esfuerzo cortante actúa tangencialmente sobre las muestras."
+            },
+            {
+              "label": "Comparar las respuestas",
+              "text": "El bloque puede equilibrar el esfuerzo con una deformación estática; el agua no alcanza una deformación estática bajo ese esfuerzo."
+            },
+            {
+              "label": "Aplicar el criterio",
+              "text": "La deformación continua mientras actúa el esfuerzo caracteriza al fluido."
+            }
+          ],
+          "result": "El agua presenta comportamiento de fluido; el bloque se comporta como un sólido elástico.",
+          "assumptions": "Se considera agua en estado líquido y un bloque que permanece en su intervalo elástico."
+        }
+      ],
+      "comparison": {
+        "title": "Acero, aire y agua: ¿en qué se diferencian?",
+        "caption": "Comparación de propiedades mecánicas y físicas. Aire seco y agua líquida a 20 °C y 101325 Pa; valores orientativos de acero estructural al carbono a temperatura ambiente.",
+        "headers": [
+          "Propiedad o respuesta",
+          "Acero estructural",
+          "Aire seco",
+          "Agua líquida"
+        ],
+        "rows": [
+          [
+            "Estado físico",
+            "Sólido",
+            "Gas",
+            "Líquido"
+          ],
+          [
+            "Densidad ρ [kg/m³]",
+            "≈ 7850",
+            "1.2046",
+            "998.21"
+          ],
+          [
+            "Resistencia al cortante en reposo",
+            "Puede sostener esfuerzo cortante dentro de su capacidad resistente.",
+            "No sostiene esfuerzo cortante estático.",
+            "No sostiene esfuerzo cortante estático."
+          ],
+          [
+            "Respuesta a un esfuerzo cortante mantenido",
+            "Puede alcanzar una deformación estática en el intervalo elástico.",
+            "Continúa deformándose: fluye.",
+            "Continúa deformándose: fluye."
+          ],
+          [
+            "Módulo de Young E [GPa]",
+            "≈ 210",
+            "No aplica como modelo de sólido elástico.",
+            "No aplica como modelo de sólido elástico."
+          ],
+          [
+            "Módulo cortante estático G [GPa]",
+            "≈ 81",
+            "0 en equilibrio; no equivale a viscosidad nula.",
+            "0 en equilibrio; no equivale a viscosidad nula."
+          ],
+          [
+            "Módulo volumétrico K [MPa]",
+            "≈ 175000, estimado con E y νP.",
+            "Kₜ ≈ 0.10129",
+            "Kₜ ≈ 2,179.1"
+          ],
+          [
+            "Viscosidad dinámica μ [mPa·s]",
+            "No aplica al modelo de acero sólido elástico.",
+            "≈ 0.018206",
+            "≈ 1.0016"
+          ],
+          [
+            "Compresibilidad en estas condiciones",
+            "Muy baja.",
+            "Alta en comparación con los otros dos.",
+            "Baja; a menudo se aproxima como incompresible."
+          ]
+        ],
+        "notes": [
+          "Los valores del acero dependen del grado, la temperatura y el procesamiento. Para el valor ilustrativo de K se adopta elasticidad lineal isótropa: K = E/[3(1 − 2νP)], con E = 210 GPa y νP = 0.30. νP es la razón de Poisson, no la viscosidad cinemática.",
+          "En los fluidos se muestra el módulo volumétrico isotérmico Kₜ. La viscosidad expresa resistencia al movimiento relativo de capas; el módulo cortante estático expresa resistencia a una deformación de corte en equilibrio. Son propiedades diferentes."
+        ],
+        "sources": [
+          {
+            "label": "CoolProp · Agua",
+            "url": "https://coolprop.org/fluid_properties/fluids/Water.html"
+          },
+          {
+            "label": "CoolProp · Aire",
+            "url": "https://coolprop.org/fluid_properties/fluids/Air.html"
+          },
+          {
+            "label": "SCI/BCSA · Propiedades mecánicas del acero",
+            "url": "https://steelconstruction.info/topics/design/steel-material-properties/"
+          },
+          {
+            "label": "SSAB · Densidad de acero estructural",
+            "url": "https://websitecdn.ssab.com/-/media/Files/EN/Support/Certificates/Hollow-Sections/Environmental-product-declaration---EN-EPD-SSAB-tubes-sections-piles.pdf"
+          }
+        ]
+      }
     },
     {
       "id": "densidad",
@@ -22,7 +134,34 @@
         "Debe distinguirse de la viscosidad: la densidad cuantifica masa por volumen; la viscosidad caracteriza la respuesta al movimiento relativo de las capas del fluido."
       ],
       "formula": "ρ = m / V",
-      "symbols": "ρ en kg/m³; m en kg; V en m³."
+      "symbols": "ρ en kg/m³; m en kg; V en m³.",
+      "examples": [
+        {
+          "title": "Densidad de un aceite",
+          "statement": "Una muestra de aceite ocupa 2.00 L y tiene una masa de 1.70 kg.",
+          "given": [
+            "m = 1.70 kg",
+            "V = 2.00 L"
+          ],
+          "goal": "Calcular la densidad en el SI.",
+          "steps": [
+            {
+              "label": "Convertir el volumen",
+              "text": "V = 2.00 L × (10⁻³ m³/L) = 0.00200 m³."
+            },
+            {
+              "label": "Plantear la relación",
+              "text": "ρ = m/V."
+            },
+            {
+              "label": "Sustituir y comprobar unidades",
+              "text": "ρ = 1.70 kg / 0.00200 m³ = 850 kg/m³."
+            }
+          ],
+          "result": "ρ = 850 kg/m³.",
+          "assumptions": "Muestra homogénea en las condiciones indicadas; los datos pertenecen a este ejercicio."
+        }
+      ]
     },
     {
       "id": "peso-especifico",
@@ -33,7 +172,34 @@
         "La masa se expresa en kilogramos y el peso en newtons; por ello, el peso específico se expresa en N/m³, mientras que la densidad se expresa en kg/m³."
       ],
       "formula": "γ = ρg",
-      "symbols": "γ en N/m³; ρ en kg/m³; g en m/s²."
+      "symbols": "γ en N/m³; ρ en kg/m³; g en m/s².",
+      "examples": [
+        {
+          "title": "Peso específico a partir de la densidad",
+          "statement": "Un líquido tiene una densidad de 1200 kg/m³. Determina su peso específico.",
+          "given": [
+            "ρ = 1200 kg/m³",
+            "g = 9.81 m/s²"
+          ],
+          "goal": "Calcular γ en N/m³ y kN/m³.",
+          "steps": [
+            {
+              "label": "Identificar la propiedad",
+              "text": "El peso específico es peso por volumen, no masa por volumen."
+            },
+            {
+              "label": "Multiplicar por la gravedad",
+              "text": "γ = ρg = 1200 × 9.81 = 11772 N/m³."
+            },
+            {
+              "label": "Cambiar la escala",
+              "text": "γ = 11772/1000 = 11.772 kN/m³."
+            }
+          ],
+          "result": "γ ≈ 11.8 kN/m³.",
+          "assumptions": "Se usa g = 9.81 m/s² para los ejemplos; la calculadora indica su propio valor de g."
+        }
+      ]
     },
     {
       "id": "volumen-especifico",
@@ -43,7 +209,33 @@
         "El volumen específico es el volumen correspondiente a una unidad de masa. Para un mismo estado del fluido, es el recíproco de la densidad."
       ],
       "formula": "v = V / m = 1 / ρ",
-      "symbols": "v en m³/kg. El símbolo v representa volumen específico; V representa volumen total."
+      "symbols": "v en m³/kg. El símbolo v representa volumen específico; V representa volumen total.",
+      "examples": [
+        {
+          "title": "Volumen ocupado por unidad de masa",
+          "statement": "Un fluido homogéneo tiene densidad de 800 kg/m³.",
+          "given": [
+            "ρ = 800 kg/m³"
+          ],
+          "goal": "Calcular el volumen específico y el volumen que ocuparían 2.40 kg.",
+          "steps": [
+            {
+              "label": "Calcular el recíproco",
+              "text": "v = 1/ρ = 1/800 = 0.00125 m³/kg."
+            },
+            {
+              "label": "Obtener el volumen total",
+              "text": "V = mv = 2.40 × 0.00125 = 0.00300 m³."
+            },
+            {
+              "label": "Expresar el volumen en litros",
+              "text": "V = 0.00300 × 1000 = 3.00 L."
+            }
+          ],
+          "result": "v = 0.00125 m³/kg; V = 3.00 L.",
+          "assumptions": "La densidad se mantiene uniforme y constante durante el cálculo."
+        }
+      ]
     },
     {
       "id": "gravedad-especifica",
@@ -54,7 +246,36 @@
         "Al dividir densidades con las mismas unidades, el resultado es adimensional. La misma relación puede expresarse como un cociente de pesos específicos cuando ambos corresponden a la misma aceleración gravitacional."
       ],
       "formula": "SG = ρ / ρref = γ / γref",
-      "symbols": "SG no tiene unidades. La calculadora usa agua a 4 °C y 101325 Pa como referencia."
+      "symbols": "SG no tiene unidades. La calculadora usa agua a 4 °C y 101325 Pa como referencia.",
+      "examples": [
+        {
+          "title": "Peso de una cantidad de glicerina",
+          "statement": "Una muestra de glicerina tiene gravedad específica de 1.258 y ocupa 0.500 m³.",
+          "given": [
+            "SG = 1.258",
+            "ρref = 1000 kg/m³",
+            "V = 0.500 m³",
+            "g = 9.81 m/s²"
+          ],
+          "goal": "Determinar su densidad y peso.",
+          "steps": [
+            {
+              "label": "Recuperar la densidad",
+              "text": "ρ = SG × ρref = 1.258 × 1000 = 1258 kg/m³."
+            },
+            {
+              "label": "Calcular la masa",
+              "text": "m = ρV = 1258 × 0.500 = 629 kg."
+            },
+            {
+              "label": "Calcular el peso",
+              "text": "W = mg = 629 × 9.81 = 6170.49 N."
+            }
+          ],
+          "result": "ρ = 1258 kg/m³; W ≈ 6.17 kN.",
+          "assumptions": "Se adopta la densidad de referencia indicada en el enunciado; no se sustituye por otra tabla."
+        }
+      ]
     },
     {
       "id": "viscosidad",
@@ -66,7 +287,41 @@
         "La temperatura influye de manera importante: en condiciones habituales, la viscosidad de los líquidos disminuye al calentarlos y la de los gases aumenta. La presión también puede influir y no debe ignorarse sin considerar el intervalo de operación."
       ],
       "formula": "τ = μ (du/dy)     ·     ν = μ / ρ",
-      "symbols": "τ en Pa; du/dy en s⁻¹; μ en Pa·s; ν en m²/s. 1 P = 0.1 Pa·s; 1 St = 10⁻⁴ m²/s."
+      "symbols": "τ en Pa; du/dy en s⁻¹; μ en Pa·s; ν en m²/s. 1 P = 0.1 Pa·s; 1 St = 10⁻⁴ m²/s.",
+      "examples": [
+        {
+          "title": "Esfuerzo y viscosidad cinemática",
+          "statement": "Una película de aceite separa dos placas paralelas. La placa inferior está fija y la superior se mueve a 2.0 m/s.",
+          "given": [
+            "μ = 0.140 Pa·s",
+            "ρ = 800 kg/m³",
+            "h = 1.00 mm",
+            "U = 2.0 m/s",
+            "A = 0.050 m²"
+          ],
+          "goal": "Obtener el esfuerzo cortante, la fuerza y la viscosidad cinemática.",
+          "steps": [
+            {
+              "label": "Convertir el espesor y calcular el gradiente",
+              "text": "h = 0.00100 m. Para un perfil lineal, du/dy = U/h = 2000 s⁻¹."
+            },
+            {
+              "label": "Aplicar la ley de Newton de la viscosidad",
+              "text": "τ = μ(U/h) = 0.140 × 2000 = 280 Pa."
+            },
+            {
+              "label": "Obtener la fuerza tangencial",
+              "text": "F = τA = 280 × 0.050 = 14.0 N."
+            },
+            {
+              "label": "Calcular la viscosidad cinemática",
+              "text": "ν = μ/ρ = 0.140/800 = 1.75 × 10⁻⁴ m²/s = 175 mm²/s."
+            }
+          ],
+          "result": "τ = 280 Pa; F = 14.0 N; ν = 175 mm²/s.",
+          "assumptions": "Flujo laminar entre placas, fluido newtoniano, sin deslizamiento, temperatura constante, sin gradiente de presión ni efectos de borde."
+        }
+      ]
     },
     {
       "id": "newtonianos",
@@ -78,7 +333,34 @@
         "El fluido ideal es una simplificación en la que se desprecia la resistencia viscosa a la deformación cortante. Su utilidad depende de las condiciones del análisis; no debe confundirse con un fluido real sin efectos viscosos."
       ],
       "formula": "τ = μ (du/dy)",
-      "symbols": "Relación para un fluido newtoniano; μ es la pendiente de τ frente a du/dy."
+      "symbols": "Relación para un fluido newtoniano; μ es la pendiente de τ frente a du/dy.",
+      "examples": [
+        {
+          "title": "Comprobar la proporcionalidad",
+          "statement": "Un fluido se ensaya a temperatura y presión constantes. Se miden 2.0 Pa para una rapidez de deformación de 50 s⁻¹ y 4.0 Pa para 100 s⁻¹.",
+          "given": [
+            "(γ̇₁, τ₁) = (50 s⁻¹, 2.0 Pa)",
+            "(γ̇₂, τ₂) = (100 s⁻¹, 4.0 Pa)"
+          ],
+          "goal": "Comparar las viscosidades aparentes.",
+          "steps": [
+            {
+              "label": "Calcular el primer cociente",
+              "text": "μap,1 = τ₁/γ̇₁ = 2.0/50 = 0.040 Pa·s."
+            },
+            {
+              "label": "Calcular el segundo cociente",
+              "text": "μap,2 = τ₂/γ̇₂ = 4.0/100 = 0.040 Pa·s."
+            },
+            {
+              "label": "Interpretar el resultado",
+              "text": "Al duplicarse γ̇ también se duplica τ. Los dos puntos son compatibles con una recta que pasa por el origen."
+            }
+          ],
+          "result": "Los datos son compatibles con μ = 0.040 Pa·s y comportamiento newtoniano en el intervalo ensayado.",
+          "assumptions": "Dos puntos no demuestran por sí solos el comportamiento del material en cualquier intervalo o condición."
+        }
+      ]
     },
     {
       "id": "modelo-volumetrico",
@@ -90,7 +372,39 @@
         "Muchos cálculos de líquidos admiten la aproximación de incompresibilidad porque las variaciones de volumen son pequeñas. En fenómenos con cambios intensos o rápidos de presión, como el golpe de ariete, esa aproximación necesita revisarse."
       ],
       "formula": "K = −V (dp/dV)",
-      "symbols": "K en Pa. La condición térmica debe indicarse; la calculadora presenta el módulo isotérmico Kₜ."
+      "symbols": "K en Pa. La condición térmica debe indicarse; la calculadora presenta el módulo isotérmico Kₜ.",
+      "examples": [
+        {
+          "title": "Cambio de volumen por compresión",
+          "statement": "Un líquido ocupa inicialmente 1.00 m³ y experimenta un incremento de presión de 2.00 MPa.",
+          "given": [
+            "V₀ = 1.00 m³",
+            "Δp = 2.00 MPa",
+            "K = 2.20 GPa"
+          ],
+          "goal": "Calcular la variación aproximada y el volumen final.",
+          "steps": [
+            {
+              "label": "Unificar las unidades",
+              "text": "Δp = 2.00 × 10⁶ Pa y K = 2.20 × 10⁹ Pa."
+            },
+            {
+              "label": "Despejar la variación de volumen",
+              "text": "ΔV ≈ −V₀Δp/K."
+            },
+            {
+              "label": "Sustituir",
+              "text": "ΔV ≈ −(1.00)(2.00 × 10⁶)/(2.20 × 10⁹) = −9.09 × 10⁻⁴ m³."
+            },
+            {
+              "label": "Interpretar el signo y sumar",
+              "text": "La reducción es de aproximadamente 0.909 L. Vfinal = V₀ + ΔV ≈ 0.999091 m³."
+            }
+          ],
+          "result": "ΔV ≈ −0.000909 m³; Vfinal ≈ 0.999091 m³.",
+          "assumptions": "Incremento pequeño, masa constante y módulo aproximadamente constante bajo la condición térmica especificada para el material."
+        }
+      ]
     },
     {
       "id": "tension-superficial",
@@ -101,7 +415,35 @@
         "La tensión superficial permite describir ese comportamiento de la interfaz. Interviene, por ejemplo, en la formación de gotas y en fuerzas asociadas al contacto con la superficie del líquido."
       ],
       "formula": "σ: tensión superficial",
-      "symbols": "Unidad SI: N/m, equivalente a J/m²."
+      "symbols": "Unidad SI: N/m, equivalente a J/m².",
+      "examples": [
+        {
+          "title": "Fuerza sobre una película líquida",
+          "statement": "Una película líquida tiene dos caras y está sostenida por un alambre móvil de 5.0 cm de longitud. La tensión superficial vale 0.030 N/m.",
+          "given": [
+            "L = 5.0 cm",
+            "σ = 0.030 N/m",
+            "Dos caras de la película"
+          ],
+          "goal": "Determinar la fuerza necesaria para equilibrar la tensión superficial.",
+          "steps": [
+            {
+              "label": "Convertir la longitud",
+              "text": "L = 0.050 m."
+            },
+            {
+              "label": "Contar las interfaces",
+              "text": "Cada cara aporta σL; la longitud efectiva total es 2L."
+            },
+            {
+              "label": "Calcular la fuerza",
+              "text": "F = 2σL = 2 × 0.030 × 0.050 = 0.0030 N."
+            }
+          ],
+          "result": "F = 3.0 mN.",
+          "assumptions": "Película plana con dos caras, fuerza paralela a la película y perpendicular al alambre. Se desprecia el peso y otras fuerzas sobre el alambre."
+        }
+      ]
     },
     {
       "id": "presion",
@@ -113,17 +455,180 @@
         "La presión manométrica puede ser negativa cuando la presión del sistema es menor que la atmosférica. Antes de operar con mediciones, es necesario identificar la referencia utilizada por cada instrumento."
       ],
       "formula": "pman = pabs − patm     ·     pvac = patm − pabs",
-      "symbols": "1 Pa = 1 N/m². pvac expresa una magnitud positiva para un sistema por debajo de patm."
+      "symbols": "1 Pa = 1 N/m². pvac expresa una magnitud positiva para un sistema por debajo de patm.",
+      "examples": [
+        {
+          "title": "De vacío a presión absoluta",
+          "statement": "Un vacuómetro conectado a un depósito indica 24 kPa de vacío. La presión atmosférica local es 92 kPa.",
+          "given": [
+            "pvac = 24 kPa",
+            "patm = 92 kPa"
+          ],
+          "goal": "Obtener la presión absoluta y la manométrica.",
+          "steps": [
+            {
+              "label": "Identificar las referencias",
+              "text": "La lectura de vacío indica cuánto falta para alcanzar la presión atmosférica."
+            },
+            {
+              "label": "Calcular la presión absoluta",
+              "text": "pabs = patm − pvac = 92 − 24 = 68 kPa."
+            },
+            {
+              "label": "Obtener la presión manométrica",
+              "text": "pman = pabs − patm = 68 − 92 = −24 kPa."
+            }
+          ],
+          "result": "pabs = 68 kPa; pman = −24 kPa.",
+          "assumptions": "Todas las lecturas corresponden al mismo punto y a la misma presión atmosférica local."
+        }
+      ]
     },
     {
       "id": "flujo",
       "number": "1.11",
-      "title": "Flujo",
-      "paragraphs": []
+      "title": "Flujo, caudal volumétrico y flujo másico",
+      "paragraphs": [
+        "El flujo describe el movimiento de un fluido a través de una región. Para cuantificar cuánto fluido cruza una sección se usan dos magnitudes distintas: el caudal volumétrico, referido al volumen, y el flujo másico, referido a la masa. La velocidad describe qué tan rápido se mueve el fluido y no es equivalente al caudal."
+      ],
+      "examples": [
+        {
+          "title": "A · Caudal volumétrico por aforo",
+          "statement": "Una descarga llena un recipiente con 40.0 L de agua en 25.0 s.",
+          "given": [
+            "ΔV = 40.0 L",
+            "Δt = 25.0 s"
+          ],
+          "goal": "Obtener el caudal promedio en m³/s y L/s.",
+          "steps": [
+            {
+              "label": "Convertir el volumen",
+              "text": "ΔV = 40.0 × 10⁻³ = 0.0400 m³."
+            },
+            {
+              "label": "Dividir entre el tiempo",
+              "text": "Qprom = ΔV/Δt = 0.0400/25.0 = 0.00160 m³/s."
+            },
+            {
+              "label": "Convertir a litros por segundo",
+              "text": "Qprom = 0.00160 × 1000 = 1.60 L/s."
+            }
+          ],
+          "result": "Qprom = 0.00160 m³/s = 1.60 L/s.",
+          "assumptions": "Aforo sin pérdidas de recolección; se reporta un promedio durante los 25.0 s."
+        },
+        {
+          "title": "B · Flujo másico",
+          "statement": "El caudal del ejemplo anterior transporta un fluido cuya densidad, en las condiciones de medición, es 998 kg/m³.",
+          "given": [
+            "Q = 0.00160 m³/s",
+            "ρ = 998 kg/m³"
+          ],
+          "goal": "Calcular la masa transportada por segundo y en 25.0 s.",
+          "steps": [
+            {
+              "label": "Relacionar masa y volumen",
+              "text": "ṁ = ρQ, para densidad uniforme en la sección."
+            },
+            {
+              "label": "Calcular el flujo másico",
+              "text": "ṁ = 998 × 0.00160 = 1.5968 kg/s."
+            },
+            {
+              "label": "Obtener la masa transportada",
+              "text": "m = ṁΔt = 1.5968 × 25.0 = 39.92 kg."
+            }
+          ],
+          "result": "ṁ ≈ 1.60 kg/s; m ≈ 39.9 kg en 25.0 s.",
+          "assumptions": "Caudal y densidad constantes durante el intervalo; la densidad se proporciona como dato del ejercicio."
+        },
+        {
+          "title": "C · Continuidad en una reducción",
+          "statement": "Una tubería llena conduce agua en régimen permanente. Su diámetro cambia de 40.0 mm a 20.0 mm; en la primera sección la velocidad media es 0.800 m/s.",
+          "given": [
+            "D₁ = 0.0400 m",
+            "D₂ = 0.0200 m",
+            "ū₁ = 0.800 m/s"
+          ],
+          "goal": "Determinar la velocidad media en la sección estrecha y comprobar el caudal.",
+          "steps": [
+            {
+              "label": "Establecer las condiciones",
+              "text": "Sin fugas, derivaciones ni acumulación; para agua con densidad aproximadamente constante, Q₁ = Q₂."
+            },
+            {
+              "label": "Relacionar áreas y diámetros",
+              "text": "A = πD²/4, por lo que A₁/A₂ = (D₁/D₂)² = 4."
+            },
+            {
+              "label": "Despejar la velocidad",
+              "text": "ū₂ = (A₁/A₂)ū₁ = 4 × 0.800 = 3.20 m/s."
+            },
+            {
+              "label": "Comprobar el caudal en ambas secciones",
+              "text": "Q₁ = π(0.0400)²(0.800)/4 ≈ 0.001005 m³/s. Q₂ = π(0.0200)²(3.20)/4 ≈ 0.001005 m³/s."
+            }
+          ],
+          "result": "ū₂ = 3.20 m/s; Q₁ = Q₂ ≈ 1.01 L/s.",
+          "assumptions": "La velocidad empleada es la media normal a cada sección. Reducir el diámetro a la mitad cuadruplica la velocidad en estas condiciones, no la duplica."
+        }
+      ],
+      "subsections": [
+        {
+          "id": "flujo-volumetrico",
+          "title": "Flujo o caudal volumétrico",
+          "paragraphs": [
+            "El caudal volumétrico instantáneo es el volumen que cruza una sección por unidad de tiempo. En un aforo mediante recipiente, ΔV/Δt proporciona el caudal promedio del intervalo.",
+            "En una sección de área A, Q = Aū utiliza la velocidad normal media. Si la velocidad cambia a lo largo de la sección, la expresión general suma el aporte local mediante una integral. En el SI se expresa en m³/s; también es habitual utilizar L/s."
+          ],
+          "formula": "Q = dV/dt     ·     Qprom = ΔV/Δt     ·     Q = ∫A uₙ dA = Aū",
+          "symbols": "V: volumen [m³]; t: tiempo [s]; A: área [m²]; uₙ: velocidad normal local; ū: velocidad normal media [m/s]."
+        },
+        {
+          "id": "flujo-masico",
+          "title": "Flujo másico",
+          "paragraphs": [
+            "El flujo másico es la masa que atraviesa una sección por unidad de tiempo; se expresa en kg/s. Si la densidad es uniforme en la sección, puede obtenerse multiplicando el caudal volumétrico por esa densidad.",
+            "En un gas, los cambios de temperatura o presión pueden cambiar la densidad. Por ello, conservar el flujo másico no implica que el caudal volumétrico sea igual en todos los puntos."
+          ],
+          "formula": "ṁ = dm/dt     ·     ṁ = ∫A ρuₙ dA     ·     ṁ = ρQ = ρAū (ρ uniforme)",
+          "symbols": "ṁ: flujo másico [kg/s]; ρ: densidad en la sección [kg/m³]."
+        },
+        {
+          "id": "continuidad-castelli",
+          "title": "Continuidad y ley de Castelli",
+          "paragraphs": [
+            "En un conducto sin ramificaciones ni fugas, la conservación de la masa exige que la diferencia entre lo que entra y sale sea igual a la acumulación de masa. En régimen permanente, sin fuentes ni sumideros de masa, el flujo másico de entrada coincide con el de salida.",
+            "Si además la densidad puede considerarse constante, se conserva el caudal volumétrico: A₁ū₁ = A₂ū₂. Una sección menor requiere mayor velocidad media para transportar el mismo caudal. No se puede aplicar esa igualdad sin revisar las condiciones anteriores.",
+            "La lectura histórica de Enzo Levi permite relacionar la medición de una corriente con el área de paso y la velocidad: el tamaño de una sección, por sí solo, no determina el gasto."
+          ],
+          "formula": "ρ₁A₁ū₁ = ρ₂A₂ū₂     ·     Si ρ₁ = ρ₂: Q = A₁ū₁ = A₂ū₂",
+          "symbols": "Ecuación entre secciones para flujo permanente en un conducto sin entradas o salidas laterales."
+        }
+      ]
     }
   ],
   "exercises": [],
   "activity": "",
   "sources": [],
-  "materialSource": "Adaptación del capítulo «Propiedades de los fluidos» del manual docente de Mecánica de Fluidos (2022), proporcionado para esta plataforma."
+  "materialSource": "Adaptación del capítulo «Propiedades de los fluidos» del manual docente de Mecánica de Fluidos (2022), proporcionado para esta plataforma.",
+  "reading": {
+    "title": "La ley de Castelli",
+    "author": "Enzo Levi",
+    "book": "El agua según la ciencia",
+    "pages": "128–130 (paginación impresa)",
+    "url": "https://labhidraulica.imta.mx/assets/pdf/El_agua_seg%C3%BAn_la_ciencia_Enzo_levi.pdf#page=127",
+    "description": "Lectura sugerida del capítulo III, «Ríos y canales». Explica cómo se vincularon históricamente la sección de una corriente, su velocidad y el gasto. La página 127 del visor corresponde al inicio del apartado en la página impresa 128.",
+    "questions": [
+      "¿Por qué no basta conocer el área de una sección para saber cuánta agua transporta?",
+      "¿Qué argumento utiliza Castelli sobre la acumulación entre dos secciones?",
+      "¿Qué hipótesis necesitas para escribir A₁ū₁ = A₂ū₂?"
+    ]
+  },
+  "video": {
+    "title": "Propiedades de los fluidos | 2/81 | UPV",
+    "channel": "Universitat Politècnica de València · UPV",
+    "id": "0v80ONiFHj0",
+    "url": "https://www.youtube.com/watch?v=0v80ONiFHj0"
+  }
 }
