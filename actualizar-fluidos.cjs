@@ -38,7 +38,7 @@ for(const [id,kind] of [['ejemplo-densidad-2','barril'],['ejemplo-peso-especific
  html=html.replace(pattern,(_,body,end)=>body+experiment(kind)+end);
 }
 if(!html.includes('src="../js/experimentos-fluidos.js'))html=html.replace('</head>','<script defer src="../js/experimentos-fluidos.js?v=1"></script></head>');
-if(!html.includes('href="../css/experimentos-fluidos.css'))html=html.replace('</head>','<link rel="stylesheet" href="../css/experimentos-fluidos.css?v=1"></head>');
+if(!html.includes('href="../css/experimentos-fluidos.css'))html=html.replace('</head>','<link rel="stylesheet" href="../css/experimentos-fluidos.css?v=2"></head>');
 html=html.replace('fluidos.css?v=reologia-4','fluidos.css?v=experimentos-5');
 fs.writeFileSync(target,html);
 const overviewPath=path.join(root,'cursos/mecanica-de-fluidos.html');
