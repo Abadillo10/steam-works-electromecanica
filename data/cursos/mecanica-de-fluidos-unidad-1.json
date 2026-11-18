@@ -611,6 +611,46 @@
           ],
           "result": "pabs = 68 kPa; pman = −24 kPa.",
           "assumptions": "Todas las lecturas corresponden al mismo punto y a la misma presión atmosférica local."
+        },
+        {
+          "title": "Gato hidráulico: amplificación por palanca y presión",
+          "statement": "Se aplica una fuerza vertical de 100 N en el extremo de la manija de un gato hidráulico. Entre ese extremo y la unión B con el pistón pequeño hay 30 cm; entre B y el apoyo C hay 3 cm. Los diámetros de los pistones son 1.5 cm y 5 cm. Determina la carga F₂ que puede sostener el pistón grande en el modelo ideal.",
+          "given": [
+            "F = 100 N",
+            "Distancia del punto de aplicación de F a B: 30 cm",
+            "Distancia de B al apoyo C: 3 cm",
+            "d₁ = 1.5 cm = 0.015 m",
+            "d₂ = 5 cm = 0.050 m"
+          ],
+          "goal": "Calcular la fuerza aplicada al pistón pequeño, la presión manométrica ideal y la carga sostenida por el pistón grande.",
+          "steps": [
+            {
+              "label": "Medir los brazos respecto del apoyo C",
+              "text": "La fuerza de entrada actúa a 30 + 3 = 33 cm de C. El pistón pequeño actúa a 3 cm de C. Los brazos se miden desde el mismo apoyo; los 30 cm no son el brazo completo de la fuerza de entrada."
+            },
+            {
+              "label": "Equilibrar momentos de la palanca",
+              "text": "F × 0.33 = F₁ × 0.03. Entonces F₁ = 100 × (0.33/0.03) = 1100 N. La palanca aplica esa fuerza hacia abajo al pistón pequeño; la reacción del pistón sobre la palanca es hacia arriba."
+            },
+            {
+              "label": "Calcular las áreas de los pistones",
+              "text": "A₁ = πd₁²/4 = π(0.015)²/4 ≈ 1.76715 × 10⁻⁴ m². A₂ = π(0.050)²/4 ≈ 1.96350 × 10⁻³ m²."
+            },
+            {
+              "label": "Relacionar fuerza y presión",
+              "text": "pman = F₁/A₁ ≈ 1100/(1.76715 × 10⁻⁴) ≈ 6.22473 × 10⁶ Pa = 6.225 MPa. Con las diferencias de altura despreciadas, la misma presión manométrica actúa bajo ambos pistones."
+            },
+            {
+              "label": "Obtener la carga sostenida",
+              "text": "F₂ = pman A₂ = F₁(A₂/A₁) = 1100(5/1.5)² ≈ 12222.2 N = 12.22 kN. El aceite ejerce esa fuerza hacia arriba y equilibra la carga F₂ que actúa hacia abajo."
+            },
+            {
+              "label": "Interpretar la amplificación",
+              "text": "La palanca multiplica la fuerza por 11 y la razón de áreas por 11.111; la amplificación ideal conjunta es aproximadamente 122.22. La fuerza mayor se obtiene a cambio de menor desplazamiento del pistón grande, sin crear energía."
+            }
+          ],
+          "result": "F₁ = 1100 N; pman ≈ 6.225 MPa; carga sostenida F₂ ≈ 12.22 kN.",
+          "assumptions": "Adaptado de MF4C, ejemplo 4.5, página 33 del PDF. Palanca en la posición horizontal dibujada, fuerzas verticales, equilibrio cuasiestático, líquido incompresible y válvula de retención en la condición que permite presurizar el circuito. Se desprecian el peso del levantador, el rozamiento, las fugas y las diferencias hidrostáticas de altura; las caras exteriores están a la misma presión atmosférica. No es una capacidad nominal ni una recomendación de uso de un gato real."
         }
       ]
     },
