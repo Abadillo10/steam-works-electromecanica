@@ -1,0 +1,5 @@
+.example-illustration{margin:0;padding:22px;background:#fff;min-width:540px;border-bottom:1px solid #dce6ef}
+.example-illustration img{display:block;width:100%;max-width:740px;height:auto;margin:0 auto;border:1px solid #dce6ef;border-radius:10px}
+.example-illustration figcaption{max-width:740px;margin:12px auto 0;font-size:14px;line-height:1.65;color:#526477}
+@media(max-width:760px){.example-illustration{padding:16px}}
+@media print{.example-illustration{min-width:0;break-inside:avoid}.example-illustration img{max-height:240px}}
