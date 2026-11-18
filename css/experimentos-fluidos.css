@@ -15,10 +15,11 @@
 .experiment-table caption{text-align:left;font-weight:650;color:#12345b;margin-bottom:10px}
 .experiment-table th,.experiment-table td{padding:9px 7px;border-bottom:1px solid #dce6ef;text-align:left;overflow-wrap:anywhere}
 .experiment-table tbody th{font-weight:500}
-.experiment-table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+.experiment-table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;overflow-wrap:normal}
 .experiment-table thead{background:#e8f1fc}
 .fluid-experiment ol{padding-left:20px}
 .fluid-experiment li{margin-bottom:12px}
 .fluid-experiment [data-status]{padding:12px;background:#e8f1fc;margin:18px 0 0;border-radius:6px}
 @media(max-width:760px){.fluid-experiment{padding:17px}.experiment-grid{gap:14px}.experiment-table{font-size:13px}}
 @media print{.fluid-experiment input,.fluid-experiment button,.experiment-range-label{display:none}.fluid-experiment{min-width:0}}
+
