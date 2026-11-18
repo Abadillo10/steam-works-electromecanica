@@ -1,6 +1,8 @@
 # Calculadora de propiedades
 
-Herramienta docente de la Unidad 1 de Mecánica de Fluidos. Los textos se adaptaron del capítulo «Propiedades de los fluidos» de Manual_MF.zip, proporcionado por el docente. Se normalizaron las unidades al SI y se corrigieron las afirmaciones de que el peso específico tiene unidades de densidad, que la pendiente newtoniana representa velocidad y que toda presión manométrica debe ser positiva. No se reprodujeron los ejemplos numéricos que requieren revisión ni los capítulos de otras unidades. Flujo permanece pendiente porque su sección está comentada en el archivo fuente.
+Herramienta docente de la Unidad 1 de Mecánica de Fluidos. Los textos se adaptaron del capítulo «Propiedades de los fluidos» de Manual_MF.zip, proporcionado por el docente. Se normalizaron las unidades al SI y se corrigieron las afirmaciones de que el peso específico tiene unidades de densidad, que la pendiente newtoniana representa velocidad y que toda presión manométrica debe ser positiva. No se reprodujeron los ejemplos numéricos que requieren revisión ni los capítulos de otras unidades.
+
+Por solicitud docente se desarrolló Flujo, con caudal volumétrico, flujo másico y continuidad. Se incorporaron 13 ejemplos didácticos con enunciado y solución paso a paso, distribuidos entre los 11 subtemas. Sus datos son enunciados educativos, no propiedades universales. Se añadió la lectura «La ley de Castelli» de Enzo Levi (pp. impresas 128–130; página 127 del visor del PDF enlazado), un reproductor del video de la UPV con enlace alternativo, y una comparación de acero, aire y agua. No se redistribuye el libro ni el video.
 
 ## Datos y condiciones
 
@@ -16,7 +18,9 @@ La interpolación se contrastó con CoolProp a 0.25, 0.5 y 0.75 °C de cada inte
 - Plantilla de la calculadora: `componentes/calculadora-fluidos.html`.
 - Tras editar cualquiera de ellos: `node actualizar-fluidos.cjs`.
 - Datos: `data/propiedades-fluidos.json`. Para regenerarlos, instalar CoolProp 8.0.0 en un entorno de trabajo y ejecutar `scripts/generar-datos-fluidos.py`; el parámetro `--library-dir` permite indicar su ubicación.
-- Pruebas: `node scripts/verificar-calculadora.mjs` y `node verificar.cjs --archivos`.
+- Pruebas: `node scripts/verificar-calculadora.mjs`, `node scripts/verificar-ejemplos-fluidos.mjs` y `node verificar.cjs --archivos`.
+
+Los ejemplos se editan en el campo `examples` de cada subtema: `statement`, `given`, `goal`, `assumptions`, `steps` (lista con `label` y `text`) y `result`. La tabla está en `comparison` del primer subtema. La lectura y el video están en `reading` y `video`. Tras editar estos campos, ejecutar `node actualizar-fluidos.cjs` y guardar también el HTML generado. Los bloques de ejercicios y solución se apilan en pantallas estrechas; la tabla tiene desplazamiento horizontal propio con acceso por teclado.
 
 No se necesita Python ni CoolProp instalado para visitar el sitio: los datos ya están guardados y el cálculo se realiza en el navegador. No se transmiten las temperaturas introducidas.
 
