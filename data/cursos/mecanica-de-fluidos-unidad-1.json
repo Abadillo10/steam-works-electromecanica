@@ -536,6 +536,42 @@
           ],
           "result": "F = 3.0 mN.",
           "assumptions": "Película plana con dos caras, fuerza paralela a la película y perpendicular al alambre. Se desprecia el peso y otras fuerzas sobre el alambre."
+        },
+        {
+          "title": "Halobates: sostener un insecto sobre el agua",
+          "statement": "Un insecto marino Halobates tiene una masa de 0.36 g y seis patas. Estima la longitud de apoyo de sus patas necesaria para equilibrar su peso mediante la tensión superficial del agua a 20 °C. Modela cada tramo apoyado de pata como un cilindro delgado con dos líneas de contacto.",
+          "given": [
+            "m = 0.36 g = 0.00036 kg",
+            "σ = 72.7 mN/m = 0.0727 N/m",
+            "g = 9.81 m/s²",
+            "Seis patas con igual longitud de apoyo",
+            "Dos líneas de contacto por tramo apoyado"
+          ],
+          "goal": "Determinar la suma L de longitudes de apoyo de las seis patas y la longitud de apoyo por pata. Distinguir L de la longitud total de las líneas de contacto.",
+          "steps": [
+            {
+              "label": "Calcular el peso del insecto",
+              "text": "W = mg = 0.00036 × 9.81 = 0.0035316 N = 3.5316 mN."
+            },
+            {
+              "label": "Definir qué longitud se está calculando",
+              "text": "Si cada tramo apoyado de pata tiene dos líneas laterales de contacto, la longitud total de dichas líneas es ℓcontacto = 2L, donde L suma las longitudes de apoyo de las seis patas."
+            },
+            {
+              "label": "Equilibrar las fuerzas verticales",
+              "text": "En el modelo ideal con contribución vertical máxima de la tensión superficial y sin empuje hidrostático, Fσ = σℓcontacto = 2σL. El equilibrio exige 2σL = mg."
+            },
+            {
+              "label": "Calcular la suma de longitudes de apoyo",
+              "text": "L = mg/(2σ) = 0.0035316/(2 × 0.0727) ≈ 0.0242889 m = 24.3 mm."
+            },
+            {
+              "label": "Repartir entre las seis patas",
+              "text": "Si todas contribuyen por igual, Lapoyo por pata = L/6 ≈ 4.05 mm. La longitud total de las líneas de contacto es 2L ≈ 48.6 mm."
+            }
+          ],
+          "result": "Suma de longitudes de apoyo L ≈ 24.3 mm; apoyo por pata ≈ 4.05 mm; longitud total de líneas de contacto ≈ 48.6 mm.",
+          "assumptions": "Adaptado de MF4C, ejemplo 4.4, página 29 del PDF. Los 24.3 mm del material se interpretan como suma de tramos de apoyo, con dos líneas de contacto por tramo. Es una estimación ideal de longitud mínima bajo contribución vertical máxima, seis apoyos iguales y empuje despreciable. En un insecto real intervienen la geometría del menisco, los ángulos de contacto y el reparto de carga; no se calcula la longitud anatómica de las patas."
         }
       ]
     },
