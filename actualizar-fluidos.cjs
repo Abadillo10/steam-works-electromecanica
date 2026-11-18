@@ -32,6 +32,14 @@ html=html.replace(/fluidos\.css\?v=[^"]+/,'fluidos.css?v=tabla-3').replace(/flui
 html=html.replace('fluidos.css?v=tabla-3','fluidos.css?v=reologia-4');
 html=html.replace('<p class="symbols">Relación para un fluido newtoniano; μ es la pendiente de τ frente a du/dy.</p></div>','<p class="symbols">Relación para un fluido newtoniano; μ es la pendiente de τ frente a du/dy.</p></div>'+rheology());
 html=html.replaceAll('class="worked-example"','class="worked-example" tabindex="0"').replaceAll('<div class="example-columns">','<p class="example-mobile-note">Ejercicio y solución en dos columnas. Desliza el bloque para ver ambos lados.</p><div class="example-columns">');
+const experiment=require('./componentes/experimentos-fluidos.cjs');
+for(const [id,kind] of [['ejemplo-densidad-2','barril'],['ejemplo-peso-especifico-2','aceite']]){
+ const pattern=new RegExp('(<article[^>]*id="'+id+'"[\\s\\S]*?)(</article>)');
+ html=html.replace(pattern,(_,body,end)=>body+experiment(kind)+end);
+}
+if(!html.includes('src="../js/experimentos-fluidos.js'))html=html.replace('</head>','<script defer src="../js/experimentos-fluidos.js?v=1"></script></head>');
+if(!html.includes('href="../css/experimentos-fluidos.css'))html=html.replace('</head>','<link rel="stylesheet" href="../css/experimentos-fluidos.css?v=1"></head>');
+html=html.replace('fluidos.css?v=reologia-4','fluidos.css?v=experimentos-5');
 fs.writeFileSync(target,html);
 const overviewPath=path.join(root,'cursos/mecanica-de-fluidos.html');
 let overview=fs.readFileSync(overviewPath,'utf8').replace('Conceptos, propiedades, fórmulas y ejemplos para comenzar.','Material del manual docente y calculadora interactiva de propiedades.').replace('Estudiar la Unidad 1 →','Abrir la Unidad 1 →').replace('Temario preparado. Contenido pendiente de incorporación.','Material del manual docente y calculadora interactiva de propiedades.').replace('Ver temario de la Unidad 1 →','Abrir la Unidad 1 →');
