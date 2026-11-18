@@ -40,6 +40,15 @@ for(const [id,kind] of [['ejemplo-densidad-2','barril'],['ejemplo-peso-especific
 if(!html.includes('src="../js/experimentos-fluidos.js'))html=html.replace('</head>','<script defer src="../js/experimentos-fluidos.js?v=1"></script></head>');
 if(!html.includes('href="../css/experimentos-fluidos.css'))html=html.replace('</head>','<link rel="stylesheet" href="../css/experimentos-fluidos.css?v=2"></head>');
 html=html.replace('fluidos.css?v=reologia-4','fluidos.css?v=experimentos-5');
+const illustration=require('./componentes/ilustraciones-fluidos.cjs');
+for(const topic of data.topics){
+ (topic.examples||[]).forEach((e,i)=>{
+  const figure=illustration(topic.id,i+1);if(!figure)return;
+  const pattern=new RegExp('(<h3 id="ejemplo-titulo-'+topic.id+'-'+(i+1)+'">[\\s\\S]*?</h3>)');
+  html=html.replace(pattern,heading=>heading+figure);
+ });
+}
+if(!html.includes('href="../css/ilustraciones-fluidos.css'))html=html.replace('</head>','<link rel="stylesheet" href="../css/ilustraciones-fluidos.css?v=1"></head>');
 fs.writeFileSync(target,html);
 const overviewPath=path.join(root,'cursos/mecanica-de-fluidos.html');
 let overview=fs.readFileSync(overviewPath,'utf8').replace('Conceptos, propiedades, fórmulas y ejemplos para comenzar.','Material del manual docente y calculadora interactiva de propiedades.').replace('Estudiar la Unidad 1 →','Abrir la Unidad 1 →').replace('Temario preparado. Contenido pendiente de incorporación.','Material del manual docente y calculadora interactiva de propiedades.').replace('Ver temario de la Unidad 1 →','Abrir la Unidad 1 →');
