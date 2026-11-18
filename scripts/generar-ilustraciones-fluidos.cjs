@@ -1,0 +1,32 @@
+const fs=require('node:fs'),path=require('node:path');
+const out=path.join(__dirname,'../assets/ilustraciones-fluidos');fs.mkdirSync(out,{recursive:true});
+const text=(x,y,t,extra='')=>`<text x="${x}" y="${y}" ${extra}>${t}</text>`;
+const arrow=(x1,y1,x2,y2)=>`<path d="M${x1} ${y1}L${x2} ${y2}" class="arrow"/>`;
+const vessel=(x,y,w,h,level)=>`<path d="M${x} ${y}V${y+h}H${x+w}V${y}" class="wall"/><path d="M${x+3} ${y+h-level}H${x+w-3}V${y+h-3}H${x+3}Z" class="liquid"/><path d="M${x+3} ${y+h-level}H${x+w-3}" class="surface"/>`;
+function save(name,title,description,body){
+fs.writeFileSync(path.join(out,name+'.svg'),`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><defs><marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1976d2"/></marker><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0" stroke="#a6bad0" stroke-width="1"/></pattern></defs><style>text{font-family:Segoe UI,Arial,sans-serif;font-size:17px;fill:#12345b}.title{font-size:21px;font-weight:600}.note{font-size:15px;fill:#526477}.wall{fill:none;stroke:#12345b;stroke-width:3;stroke-linejoin:round}.liquid{fill:#dcecfb}.surface{fill:none;stroke:#1976d2;stroke-width:2}.arrow{fill:none;stroke:#1976d2;stroke-width:2;marker-end:url(#tip)}.guide{fill:none;stroke:#a6bad0;stroke-width:1.5;stroke-dasharray:5 5}</style><rect width="640" height="320" rx="10" fill="#f7faff"/>${text(24,33,title,'class="title"')}<path d="M24 49H616" stroke="#dce6ef"/>${body}</svg>`);
+}
+save('barril-aceite','Barril: separar el recipiente del aceite','Un recipiente vacío pesa 110 N. El recipiente lleno contiene 0.159 metros cúbicos de aceite. El peso total incluye ambas contribuciones.',
+ vessel(80,100,130,150,0)+text(86,85,'Recipiente vacío')+text(92,211,'110 N')+
+ vessel(360,100,150,150,115)+text(366,85,'Barril lleno')+text(375,175,'Aceite')+text(370,200,'V = 0.159 m³')+arrow(285,160,335,160)+text(246,139,'+ aceite')+
+ text(75,280,'Waceite = Wtotal − 110 N')+text(75,305,'Al variar ρ con V fijo, cambia el peso total.','class="note"'));
+save('aceite-volumen','Mismo peso, distinto volumen','Dos muestras ideales tienen el mismo peso de 47 kilonewtons y volúmenes de 3 y 6 metros cúbicos. La de menor volumen tiene mayor densidad.',
+ vessel(95,100,105,145,100)+vessel(345,100,210,145,100)+text(88,84,'Muestra A')+text(348,84,'Muestra B')+text(108,183,'3 m³')+text(420,183,'6 m³')+
+ text(86,268,'W = 47 kN')+text(375,268,'W = 47 kN')+text(62,304,'ρ = W / (gV) · Al duplicar V con W fijo, ρ se reduce a la mitad.','class="note"'));
+save('manguera-cubeta','Aforo con cubeta, manguera y boquilla','Una manguera de diámetro 2 centímetros se reduce a una boquilla de 0.8 centímetros. Su descarga llena una cubeta de 10 galones estadounidenses en 50 segundos.',
+ `<path d="M35 131H285L335 145V159L285 173H35" fill="#e5ebf2" stroke="#12345b" stroke-width="3"/><path d="M35 142H280L335 150V154L280 162H35" fill="#dcecfb"/><path d="M335 152Q455 150 495 215" fill="none" stroke="#1976d2" stroke-width="6"/>`+
+ arrow(85,151,180,151)+text(62,107,'D = 2 cm')+text(245,87,'Boquilla: d = 0.8 cm')+`<path d="M316 94L320 136" class="guide"/>`+
+ vessel(443,185,135,85,35)+text(459,252,'10 gal EE. UU.')+text(433,292,'Δt = 50 s')+text(47,224,'Q = V / Δt')+text(47,253,'ṁ = ρQ')+text(47,282,'ūsalida = Q / Aboquilla'));
+save('viscosidad-placas','Viscosidad entre placas paralelas','Una placa superior se mueve a 2 metros por segundo sobre una película de aceite de un milímetro. La placa inferior está fija y el perfil de velocidad es lineal.',
+ `<rect x="90" y="91" width="410" height="19" fill="url(#hatch)" stroke="#12345b" stroke-width="2"/><rect x="90" y="230" width="410" height="19" fill="url(#hatch)" stroke="#12345b" stroke-width="2"/><rect x="90" y="111" width="410" height="118" class="liquid"/><path d="M250 230L410 110" class="surface"/>`+
+ arrow(275,80,460,80)+text(281,67,'U = 2.0 m/s')+arrow(250,200,290,200)+arrow(250,170,330,170)+arrow(250,140,370,140)+`<path d="M250 112V230" class="guide"/>`+
+ text(112,168,'Aceite')+text(112,193,'μ = 0.140 Pa·s')+`<path d="M520 110H560M520 230H560M548 110V230" class="surface"/>`+text(557,173,'h')+text(88,276,'Placa inferior fija')+text(343,276,'h = 1.00 mm')+text(88,304,'Perfil lineal: du/dy = U/h · Sin deslizamiento en las paredes.','class="note"'));
+save('compresion-fluido','Compresión: presión y volumen','Dos estados de un cilindro con pistón muestran que al aumentar la presión disminuye el volumen de una misma masa de líquido. La reducción se exagera para verla.',
+ vessel(75,110,170,145,125)+vessel(370,110,170,145,95)+`<rect x="76" y="112" width="168" height="18" fill="#d5dee8" stroke="#12345b" stroke-width="2"/><rect x="371" y="142" width="168" height="18" fill="#d5dee8" stroke="#12345b" stroke-width="2"/><path d="M160 72V112M455 72V142" class="wall"/>`+
+ arrow(120,73,120,105)+arrow(415,73,415,132)+arrow(495,73,495,132)+text(191,83,'p₁')+text(553,83,'p₂ &gt; p₁')+text(117,208,'V₁')+text(413,217,'V₂ &lt; V₁')+text(226,282,'Misma masa')+text(42,307,'ΔV ≈ −V₁Δp/K · Cambio de volumen exagerado para visualizarlo.','class="note"'));
+save('halobates-contacto','Halobates: apoyo por tensión superficial','Vista esquemática de un insecto de seis patas y detalle de una pata sobre el agua. El peso actúa hacia abajo y las dos líneas de contacto aportan fuerza vertical ascendente.',
+ `<ellipse cx="160" cy="150" rx="17" ry="40" fill="#12345b"/><circle cx="160" cy="102" r="13" fill="#12345b"/><path d="M149 126L105 99L65 117M148 148L87 151L55 183M151 175L106 210L63 227M171 126L215 99L255 117M172 148L233 151L265 183M169 175L214 210L257 227" class="wall"/><path d="M340 70V268" class="guide"/>`+
+ text(47,78,'Seis patas: vista superior')+text(81,266,'L = suma de apoyos')+text(391,78,'Sección de una pata')+
+ `<path d="M365 153Q427 148 462 186Q493 211 524 186Q564 148 610 153L610 254H365Z" class="liquid"/><path d="M365 153Q427 148 462 186Q493 211 524 186Q564 148 610 153" class="surface"/><circle cx="493" cy="166" r="35" fill="#d5dee8" stroke="#12345b" stroke-width="3"/>`+
+ arrow(462,184,462,112)+arrow(524,184,524,112)+arrow(493,166,493,238)+text(431,100,'Fσ,z')+text(524,100,'Fσ,z')+text(502,242,'Peso')+text(45,306,'Modelo ideal: mg = 2σL · Dos líneas de contacto por tramo de pata.','class="note"'));
+console.log('Seis ilustraciones técnicas SVG generadas.');
