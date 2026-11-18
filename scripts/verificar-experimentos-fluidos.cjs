@@ -31,5 +31,5 @@ oil.elements.number.value='13';oil.elements.number.events.input();assert.equal(o
 oil.elements.reset.events.click();near(result(oil,'Volumen'),6);near(result(oil,'Densidad'),47000/9.81/6);
 const html=fs.readFileSync(path.join(__dirname,'../cursos/mecanica-de-fluidos-unidad-1.html'),'utf8');
 assert.equal((html.match(/data-experiment=/g)||[]).length,2);
-assert(html.includes('js/experimentos-fluidos.js?v=1'));assert(html.includes('css/experimentos-fluidos.css?v=1'));
+assert(html.includes('js/experimentos-fluidos.js?v=1'));assert(html.includes('css/experimentos-fluidos.css?v=2'));
 console.log('Correcto: dos experimentos, entradas numéricas, deslizadores, constantes, cálculos, errores y restablecimiento.');
