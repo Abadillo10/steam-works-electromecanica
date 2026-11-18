@@ -6,7 +6,7 @@ const html=fs.readFileSync(new URL('cursos/mecanica-de-fluidos-unidad-1.html',ro
 assert.equal(data.topics.length,11);
 assert(data.topics.every(t=>t.examples.length>0));
 const exampleCount=data.topics.flatMap(t=>t.examples).length;
-assert.equal(exampleCount,16);
+assert.equal(exampleCount,17);
 assert.equal((html.match(/class="example-columns"/g)||[]).length,exampleCount);
 assert.equal((html.match(/class="example-problem"/g)||[]).length,exampleCount);
 assert.equal((html.match(/class="example-solution"/g)||[]).length,exampleCount);
@@ -28,4 +28,11 @@ near(-0.030*(250-35)*98066.5/(0.02970-0.030),2108429750,0.001);
 for(const title of ['Aceite: del peso a sus propiedades','Barril de aceite: descontar el recipiente','Módulo volumétrico a partir de mediciones']) {
   assert(html.includes(title));
 }
+const bucketQ=10*3.785411784/1000/50;
+near(bucketQ,0.0007570823568);
+near(1000*bucketQ,0.7570823568);
+near(bucketQ/(Math.PI*0.008**2/4),15.06167492654775);
+near((bucketQ/(Math.PI*0.008**2/4))/(bucketQ/(Math.PI*0.020**2/4)),6.25);
+assert(html.includes('Llenado de una cubeta con manguera y boquilla'));
+assert(html.includes('galón estadounidense'));
 console.log(`Correcto: ${exampleCount} ejemplos en 11 subtemas, cálculos, tabla comparativa, lectura y video.`);
