@@ -41,7 +41,7 @@ if(root){
    range.value=String(temperature);number.removeAttribute('aria-invalid');status.classList.remove('calc-error');
    status.textContent=`${fluid.label} a ${formatter.format(temperature)} °C (${formatter.format(temperature+273.15)} K). Presión fija: 101.325 kPa absolutos.`;
    results.replaceChildren();
-   for(const [key,label,unit,scale] of definitions){const card=node('div',undefined,'calc-result');card.append(node('dt',label));if(value[key]===undefined){card.append(node('dd','No aplica','calc-na'));}else{card.append(node('dd',formatter.format(value[key]*scale)),node('span',unit,'calc-unit'));}results.append(card);}
+   for(const [key,label,unit,scale] of definitions){const row=node('tr');const heading=node('th',label);heading.scope='row';row.append(heading,node('td',value[key]===undefined?'No aplica':formatter.format(value[key]*scale),'calc-value'),node('td',value[key]===undefined?'—':unit,'calc-table-unit'));results.append(row);}
    draw(select.value,temperature,value);
   }catch(error){fail(error.message);}
  }
