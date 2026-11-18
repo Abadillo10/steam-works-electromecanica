@@ -1,0 +1,24 @@
+.fluid-experiment{border-top:2px solid #1976d2;padding:24px;min-width:540px;background:#f7faff}
+.fluid-experiment h4{font-size:20px;margin:0 0 16px;color:#12345b}
+.fluid-experiment p,.fluid-experiment li{font-size:14px;line-height:1.65}
+.experiment-fixed{padding:14px;background:#e8f1fc;border-radius:6px}
+.experiment-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:22px}
+.fluid-experiment label{display:block;font-size:14px;font-weight:600;color:#12345b;margin-bottom:8px}
+.fluid-experiment input[type=number]{width:100%;padding:10px;font:inherit;border:1px solid #a7b9ce;border-radius:6px}
+.fluid-experiment input[type=range]{width:100%;min-height:44px;accent-color:#1976d2}
+.experiment-range-label{margin-top:18px}
+.fluid-experiment button{padding:10px 14px;border:1px solid #1976d2;color:#12345b;background:white;border-radius:6px;cursor:pointer;font:inherit;font-size:14px}
+.fluid-experiment :focus-visible{outline:3px solid #1976d2;outline-offset:3px}
+.fluid-experiment input[aria-invalid=true]{border:2px solid #a43112}
+.fluid-experiment svg{display:block;width:100%;height:auto;margin-top:20px}
+.experiment-table{border-collapse:collapse;width:100%;background:white;font-size:14px}
+.experiment-table caption{text-align:left;font-weight:650;color:#12345b;margin-bottom:10px}
+.experiment-table th,.experiment-table td{padding:9px 7px;border-bottom:1px solid #dce6ef;text-align:left;overflow-wrap:anywhere}
+.experiment-table tbody th{font-weight:500}
+.experiment-table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+.experiment-table thead{background:#e8f1fc}
+.fluid-experiment ol{padding-left:20px}
+.fluid-experiment li{margin-bottom:12px}
+.fluid-experiment [data-status]{padding:12px;background:#e8f1fc;margin:18px 0 0;border-radius:6px}
+@media(max-width:760px){.fluid-experiment{padding:17px}.experiment-grid{gap:14px}.experiment-table{font-size:13px}}
+@media print{.fluid-experiment input,.fluid-experiment button,.experiment-range-label{display:none}.fluid-experiment{min-width:0}}
