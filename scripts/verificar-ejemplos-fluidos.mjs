@@ -6,7 +6,7 @@ const html=fs.readFileSync(new URL('cursos/mecanica-de-fluidos-unidad-1.html',ro
 assert.equal(data.topics.length,11);
 assert(data.topics.every(t=>t.examples.length>0));
 const exampleCount=data.topics.flatMap(t=>t.examples).length;
-assert.equal(exampleCount,17);
+assert.equal(exampleCount,18);
 assert.equal((html.match(/class="example-columns"/g)||[]).length,exampleCount);
 assert.equal((html.match(/class="example-problem"/g)||[]).length,exampleCount);
 assert.equal((html.match(/class="example-solution"/g)||[]).length,exampleCount);
@@ -35,4 +35,6 @@ near(bucketQ/(Math.PI*0.008**2/4),15.06167492654775);
 near((bucketQ/(Math.PI*0.008**2/4))/(bucketQ/(Math.PI*0.020**2/4)),6.25);
 assert(html.includes('Llenado de una cubeta con manguera y boquilla'));
 assert(html.includes('galón estadounidense'));
+near(0.00036*9.81/(2*0.0727),0.0242888583218707);
+assert(html.includes('Halobates: sostener un insecto sobre el agua'));
 console.log(`Correcto: ${exampleCount} ejemplos en 11 subtemas, cálculos, tabla comparativa, lectura y video.`);
