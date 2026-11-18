@@ -665,6 +665,47 @@
           ],
           "result": "ū₂ = 3.20 m/s; Q₁ = Q₂ ≈ 1.01 L/s.",
           "assumptions": "La velocidad empleada es la media normal a cada sección. Reducir el diámetro a la mitad cuadruplica la velocidad en estas condiciones, no la duplica."
+        },
+        {
+          "title": "D · Llenado de una cubeta con manguera y boquilla",
+          "statement": "Una manguera de jardín de 2 cm de diámetro termina en una boquilla de 0.8 cm de diámetro. Se utiliza para llenar una cubeta de 10 galones en 50 s. Determina el caudal volumétrico, el flujo másico del agua y la velocidad media de salida por la boquilla.",
+          "given": [
+            "V = 10 gal (estadounidenses)",
+            "1 gal estadounidense = 3.785411784 L",
+            "Δt = 50 s",
+            "Dmanguera = 0.020 m",
+            "Dboquilla = 0.008 m",
+            "ρagua ≈ 1000 kg/m³ (aproximación para este ejercicio)"
+          ],
+          "goal": "Calcular Q, ṁ y la velocidad media en la boquilla; comprobar la continuidad con la manguera.",
+          "steps": [
+            {
+              "label": "Convertir el volumen de la cubeta",
+              "text": "V = 10 × 3.785411784 = 37.85411784 L = 0.03785411784 m³."
+            },
+            {
+              "label": "Calcular el caudal mediante el tiempo de llenado",
+              "text": "Qprom = V/Δt = 0.03785411784/50 = 0.0007570823568 m³/s ≈ 0.757 L/s."
+            },
+            {
+              "label": "Calcular el flujo másico",
+              "text": "ṁ = ρQ = 1000 × 0.0007570823568 ≈ 0.757 kg/s."
+            },
+            {
+              "label": "Obtener el área de salida",
+              "text": "Aboquilla = πD²/4 = π(0.008)²/4 ≈ 5.02655 × 10⁻⁵ m². Se utiliza el diámetro de la boquilla porque se pide la velocidad de salida."
+            },
+            {
+              "label": "Calcular la velocidad media de salida",
+              "text": "ūboquilla = Q/Aboquilla ≈ 0.0007570823568/(5.02655 × 10⁻⁵) ≈ 15.1 m/s."
+            },
+            {
+              "label": "Comprobar la continuidad",
+              "text": "Amanguera = π(0.020)²/4 ≈ 3.14159 × 10⁻⁴ m²; ūmanguera = Q/Amanguera ≈ 2.41 m/s. La razón de velocidades es (2/0.8)² = 6.25. El caudal se conserva y la velocidad aumenta en la boquilla."
+            }
+          ],
+          "result": "Q ≈ 7.57 × 10⁻⁴ m³/s = 0.757 L/s; ṁ ≈ 0.757 kg/s; ūboquilla ≈ 15.1 m/s.",
+          "assumptions": "Adaptado de MF4C, ejemplo 4.6, página 35 del PDF. El original no especifica el tipo de galón ni la temperatura: se adopta galón estadounidense y ρ ≈ 1000 kg/m³. Flujo aproximadamente permanente, agua incompresible, secciones llenas, sin fugas y toda la descarga recogida en la cubeta. El aforo mide el caudal promedio; se usa como constante para calcular las velocidades medias. No se calcula la presión necesaria para producir este caudal."
         }
       ],
       "subsections": [
