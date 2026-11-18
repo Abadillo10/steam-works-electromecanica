@@ -11,8 +11,7 @@ module.exports=function illustration(topic,index){
  const item=items[topic+'-'+index];if(!item)return '';
  const generated={
   'tension-superficial-2':['halobates-generado','Halobates sobre el agua: cuerpo segmentado, seis patas articuladas y ondas en los puntos de apoyo.','Observa las depresiones del agua y los apoyos de las patas. El esquema siguiente define las fuerzas del modelo ideal del ejercicio.'],
-  'presion-2':['gato-hidraulico-generado','Ilustración en corte de un gato hidráulico con palanca, pistón de bombeo, pistón elevador y aceite en azul.','Referencia visual del mecanismo. Para identificar los brazos de palanca, los diámetros y las fuerzas, utiliza el esquema acotado siguiente.']
  }[topic+'-'+index];
- const reference=generated?'<figure class="example-illustration"><img src="../assets/ilustraciones-fluidos/'+generated[0]+'.jpg" alt="'+generated[1]+'" width="1774" height="887" loading="lazy" decoding="async"><figcaption>'+generated[2]+' Ilustración de referencia, no a escala.</figcaption></figure>':'';
+ const reference=generated?'<figure class="example-illustration"><img src="../assets/ilustraciones-fluidos/'+generated[0]+'.jpg" alt="'+generated[1]+'" width="1774" height="887" style="width:75%;max-width:420px" loading="lazy" decoding="async"><figcaption>'+generated[2]+' Ilustración de referencia, no a escala.</figcaption></figure>':'';
  return reference+'<figure class="example-illustration"><img src="../assets/ilustraciones-fluidos/'+item[0]+'.svg?v=2" alt="'+item[1]+'" width="640" height="320" loading="lazy" decoding="async"><figcaption>'+item[1]+' Dibujo esquemático, no a escala.</figcaption></figure>';
 };
