@@ -160,6 +160,38 @@
           ],
           "result": "ρ = 850 kg/m³.",
           "assumptions": "Muestra homogénea en las condiciones indicadas; los datos pertenecen a este ejercicio."
+        },
+        {
+          "title": "Barril de aceite: descontar el recipiente",
+          "statement": "Un barril lleno de aceite pesa 1.5 kN. El recipiente vacío pesa 110 N y contiene 0.159 m³ de aceite. Calcula las propiedades del aceite sin incluir el peso del barril.",
+          "given": [
+            "Wtotal = 1500 N",
+            "Wbarril = 110 N",
+            "Vaceite = 0.159 m³",
+            "g = 9.81 m/s²",
+            "ρref = 1000 kg/m³"
+          ],
+          "goal": "Determinar el peso específico, la densidad y la densidad relativa del aceite.",
+          "steps": [
+            {
+              "label": "Separar el peso del aceite",
+              "text": "Waceite = Wtotal − Wbarril = 1500 − 110 = 1390 N. Usar el peso total sobreestimaría las propiedades del fluido."
+            },
+            {
+              "label": "Calcular el peso específico",
+              "text": "γ = Waceite/Vaceite = 1390/0.159 ≈ 8742.14 N/m³."
+            },
+            {
+              "label": "Convertir a densidad",
+              "text": "ρ = γ/g = 8742.14/9.81 ≈ 891.146 kg/m³."
+            },
+            {
+              "label": "Obtener la densidad relativa",
+              "text": "SG = ρ/ρref = 891.146/1000 ≈ 0.8911."
+            }
+          ],
+          "result": "γ ≈ 8.74 kN/m³; ρ ≈ 891 kg/m³; SG ≈ 0.891.",
+          "assumptions": "Los 1.5 kN se interpretan como peso del conjunto lleno y los 0.159 m³ como volumen del aceite. Adaptado de MF4C, ejemplo 4.1, ejercicio 3, página 17 del PDF."
         }
       ]
     },
@@ -198,6 +230,37 @@
           ],
           "result": "γ ≈ 11.8 kN/m³.",
           "assumptions": "Se usa g = 9.81 m/s² para los ejemplos; la calculadora indica su propio valor de g."
+        },
+        {
+          "title": "Aceite: del peso a sus propiedades",
+          "statement": "Un volumen de 6 m³ de aceite pesa 47 kN. Determina su peso específico, su densidad y su densidad relativa respecto del agua.",
+          "given": [
+            "V = 6 m³",
+            "W = 47 kN = 47000 N",
+            "g = 9.81 m/s²",
+            "ρref = 1000 kg/m³"
+          ],
+          "goal": "Obtener γ en N/m³, ρ en kg/m³ y SG sin unidades.",
+          "steps": [
+            {
+              "label": "Calcular el peso por unidad de volumen",
+              "text": "γ = W/V = 47000/6 = 7833.33 N/m³ = 7.83333 kN/m³."
+            },
+            {
+              "label": "Distinguir peso y masa",
+              "text": "W = mg. Por tanto, m = 47000/9.81 ≈ 4791.03 kg; los 47 kN representan una fuerza, no una masa."
+            },
+            {
+              "label": "Calcular la densidad",
+              "text": "ρ = γ/g = 7833.33/9.81 ≈ 798.505 kg/m³."
+            },
+            {
+              "label": "Comparar con el agua de referencia",
+              "text": "SG = ρ/ρref = 798.505/1000 ≈ 0.7985. El aceite tiene menor densidad que la referencia adoptada."
+            }
+          ],
+          "result": "γ ≈ 7.83 kN/m³; ρ ≈ 799 kg/m³; SG ≈ 0.799.",
+          "assumptions": "Aceite homogéneo; se adoptan g y ρref indicados. Adaptado de MF4C, ejemplo 4.1, ejercicio 1, página 17 del PDF."
         }
       ]
     },
@@ -403,6 +466,37 @@
           ],
           "result": "ΔV ≈ −0.000909 m³; Vfinal ≈ 0.999091 m³.",
           "assumptions": "Incremento pequeño, masa constante y módulo aproximadamente constante bajo la condición térmica especificada para el material."
+        },
+        {
+          "title": "Módulo volumétrico a partir de mediciones",
+          "statement": "Una muestra de agua ocupa 30 dm³ a una presión de 35 kgf/cm². Al aumentar la presión hasta 250 kgf/cm², el volumen disminuye a 29.70 dm³. Estima el módulo volumétrico para ese intervalo.",
+          "given": [
+            "p₁ = 35 kgf/cm²; p₂ = 250 kgf/cm²",
+            "V₁ = 30 dm³ = 0.030 m³",
+            "V₂ = 29.70 dm³ = 0.02970 m³",
+            "1 kgf/cm² = 98066.5 Pa"
+          ],
+          "goal": "Estimar K mediante diferencias finitas y comprobar el signo de la variación de volumen.",
+          "steps": [
+            {
+              "label": "Calcular el incremento de presión",
+              "text": "Δp = 250 − 35 = 215 kgf/cm² = 215 × 98066.5 = 21084297.5 Pa."
+            },
+            {
+              "label": "Calcular la reducción relativa",
+              "text": "ΔV = 0.02970 − 0.03000 = −0.00030 m³. Con el volumen inicial como referencia, ΔV/V₁ = −0.01: el volumen se reduce 1 %."
+            },
+            {
+              "label": "Estimar el módulo",
+              "text": "K ≈ −V₁Δp/ΔV = −0.030 × 21084297.5/(−0.00030) = 2108429750 Pa."
+            },
+            {
+              "label": "Interpretar el resultado",
+              "text": "K ≈ 2.10843 GPa es positivo: la presión aumenta y el volumen disminuye. Es una estimación del intervalo, no una medición del módulo diferencial en un punto."
+            }
+          ],
+          "result": "K ≈ 2.11 GPa; ΔV = −0.300 L; reducción relativa del volumen = 1 %.",
+          "assumptions": "Misma muestra, masa constante y uso de V₁ como referencia. El PDF escribe kg/cm²: aquí se explicita kgf/cm² como unidad de presión. La temperatura no está indicada; no se atribuye este resultado a un módulo isotérmico o adiabático. Adaptado de MF4C, ejemplo 4.3, ejercicio 3, página 27 del PDF."
         }
       ]
     },
