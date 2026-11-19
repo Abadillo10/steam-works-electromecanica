@@ -1,0 +1,217 @@
+{
+  "conversions": [
+    [
+      "Longitud · m",
+      [
+        "1 in = 0.0254 m",
+        "1 ft = 0.3048 m",
+        "1 m = 100 cm = 1000 mm"
+      ]
+    ],
+    [
+      "Área · m²",
+      [
+        "1 cm² = 10⁻⁴ m²",
+        "1 in² = 6.4516 × 10⁻⁴ m²",
+        "1 ft² = 0.09290304 m²"
+      ]
+    ],
+    [
+      "Volumen · m³",
+      [
+        "1 m³ = 1000 L",
+        "1 L = 10⁻³ m³; 1 mL = 1 cm³",
+        "1 gal (EE. UU.) = 3.785411784 L"
+      ]
+    ],
+    [
+      "Velocidad · m/s",
+      [
+        "1 km/h = (1/3.6) m/s",
+        "1 ft/s = 0.3048 m/s",
+        "1 m/s = 3.6 km/h"
+      ]
+    ],
+    [
+      "Masa · kg",
+      [
+        "1 kg = 1000 g",
+        "1 lb (masa) = 0.45359237 kg",
+        "1 t = 1000 kg"
+      ]
+    ],
+    [
+      "Densidad · kg/m³",
+      [
+        "1 g/cm³ = 1000 kg/m³",
+        "1 lb/ft³ ≈ 16.018463 kg/m³"
+      ]
+    ],
+    [
+      "Fuerza · N",
+      [
+        "1 N = 1 kg·m/s²",
+        "1 kgf = 9.80665 N",
+        "1 lbf ≈ 4.448221615 N"
+      ]
+    ],
+    [
+      "Presión · Pa",
+      [
+        "1 Pa = 1 N/m²",
+        "1 kPa = 10³ Pa; 1 MPa = 10⁶ Pa",
+        "1 bar = 100000 Pa; 1 atm = 101325 Pa",
+        "1 psi ≈ 6894.757293 Pa",
+        "1 kgf/cm² = 98066.5 Pa"
+      ]
+    ],
+    [
+      "Columnas de presión",
+      [
+        "1 m.c.a. convencional = 9806.65 Pa",
+        "1 mmHg convencional ≈ 133.322387 Pa",
+        "Para una columna física: Δp = ρgh; especificar ρ y g."
+      ]
+    ],
+    [
+      "Caudal volumétrico · m³/s",
+      [
+        "1 L/s = 10⁻³ m³/s",
+        "1 L/min = (1/60000) m³/s",
+        "1 m³/h = (1/3600) m³/s",
+        "1 gal EE. UU./min ≈ 6.30901964 × 10⁻⁵ m³/s"
+      ]
+    ],
+    [
+      "Flujo másico · kg/s",
+      [
+        "1 kg/h = (1/3600) kg/s",
+        "1 g/s = 10⁻³ kg/s",
+        "No convertir caudal a flujo másico sin la densidad."
+      ]
+    ],
+    [
+      "Viscosidad dinámica · Pa·s",
+      [
+        "1 P = 0.1 Pa·s",
+        "1 cP = 1 mPa·s = 10⁻³ Pa·s"
+      ]
+    ],
+    [
+      "Viscosidad cinemática · m²/s",
+      [
+        "1 St = 10⁻⁴ m²/s",
+        "1 cSt = 1 mm²/s = 10⁻⁶ m²/s"
+      ]
+    ],
+    [
+      "Energía y potencia",
+      [
+        "1 J = 1 N·m; 1 kJ = 1000 J",
+        "1 W = 1 J/s; 1 kW = 1000 W",
+        "1 kWh = 3.6 × 10⁶ J",
+        "1 hp mecánico ≈ 745.699872 W; 1 CV = 735.49875 W"
+      ]
+    ],
+    [
+      "Temperatura",
+      [
+        "T[K] = t[°C] + 273.15",
+        "t[°F] = (9/5)t[°C] + 32",
+        "Diferencias: ΔT[K] = Δt[°C] = (5/9)Δt[°F]."
+      ]
+    ]
+  ],
+  "formulas": [
+    [
+      "Densidad y volumen específico",
+      "ρ = m/V; v = V/m = 1/ρ",
+      "ρ [kg/m³]; v [m³/kg]. Muestra homogénea."
+    ],
+    [
+      "Peso específico y gravedad específica",
+      "γ = ρg; SG = ρ/ρref",
+      "γ [N/m³]; SG adimensional. Declarar la referencia."
+    ],
+    [
+      "Viscosidad newtoniana",
+      "τ = μ(du/dy); ν = μ/ρ",
+      "τ [Pa]; μ [Pa·s]; ν [m²/s]. Relación local para fluido newtoniano."
+    ],
+    [
+      "Módulo volumétrico",
+      "Kvol = −V(dp/dV); ΔV ≈ −V₀Δp/Kvol",
+      "Kvol [Pa]. Aproximación para cambios pequeños; indicar condición térmica."
+    ],
+    [
+      "Presión y referencias",
+      "p = Fn/A; pman = pabs − patm; pvac = patm − pabs",
+      "p [Pa]. Fn/A es presión media si la distribución no es uniforme."
+    ],
+    [
+      "Ley de Pascal y pistones",
+      "F₂/F₁ = A₂/A₁; A₁s₁ = A₂s₂",
+      "Fluido confinado, pistones a igual elevación; modelo sin pérdidas."
+    ],
+    [
+      "Ecuación hidrostática",
+      "dp/dz = −ρg; p₂ − p₁ = ρg(z₁ − z₂)",
+      "La forma integrada requiere ρ y g constantes; z aumenta hacia arriba."
+    ],
+    [
+      "Manómetros",
+      "p₂ = p₁ + Σbajada(γᵢhᵢ) − Σsubida(γᵢhᵢ)",
+      "Usar el γ de cada capa y diferencias de altura verticales."
+    ],
+    [
+      "Fuerza sobre una superficie plana",
+      "F = ρgAhc; hcp = hc + IG sen²θ/(Ahc)",
+      "Un líquido homogéneo, presión manométrica y exterior a la misma atmósfera. θ desde la horizontal."
+    ],
+    [
+      "Empuje y estabilidad inicial",
+      "E = ρgVd; GM = KB + Iflotación/Vd − KG",
+      "E [N]. GM para pequeñas inclinaciones de un cuerpo parcialmente sumergido; GM > 0 indica estabilidad inicial."
+    ],
+    [
+      "Caudal y flujo másico",
+      "Q = ∫A uₙ dA = Aū; ṁ = ρQ",
+      "Q [m³/s]; ṁ [kg/s]. Para ṁ = ρQ se requiere densidad uniforme en la sección."
+    ],
+    [
+      "Continuidad entre dos secciones",
+      "ρ₁A₁ū₁ = ρ₂A₂ū₂",
+      "Régimen permanente, sin fugas ni derivaciones. Si ρ es constante: A₁ū₁ = A₂ū₂."
+    ],
+    [
+      "Bernoulli ideal",
+      "p₁/(ρg) + ū₁²/(2g) + z₁ = p₂/(ρg) + ū₂²/(2g) + z₂",
+      "Flujo permanente, incompresible, sin pérdidas ni máquinas, entre puntos de una línea de corriente; perfil ideal."
+    ],
+    [
+      "Energía con máquinas y pérdidas",
+      "p₁/γ + α₁ū₁²/(2g) + z₁ + hP = p₂/γ + α₂ū₂²/(2g) + z₂ + hT + hL",
+      "Flujo permanente e incompresible. hP: energía añadida por bomba; hT: extraída por turbina; hL ≥ 0: pérdida. α corrige el perfil de velocidades."
+    ],
+    [
+      "Número de Reynolds",
+      "Re = ρūD/μ = ūD/ν",
+      "Adimensional. En tubería circular, D es el diámetro interior y ū la velocidad media."
+    ],
+    [
+      "Pérdidas en tuberías",
+      "hL = fD(L/D)ū²/(2g) + Σζ ūlocal²/(2g)",
+      "hL [m]. fD es el factor de Darcy (4 veces el de Fanning); ζ usa la velocidad de referencia de cada accesorio."
+    ],
+    [
+      "Tubería circular laminar",
+      "fD = 64/Re; Q = πD⁴Δp/(128μL)",
+      "Fluido newtoniano, flujo permanente, laminar y plenamente desarrollado. La forma de Q usa un tubo horizontal sin máquinas y Δp = pent − psal."
+    ],
+    [
+      "Potencia hidráulica y eficiencia",
+      "Ph = ρgQH; Pbomba,entrada = Ph/η",
+      "P [W]; H [m]; 0 < η ≤ 1. Para turbina: Psalida = ηPh. No intercambiar potencia hidráulica y potencia de eje."
+    ]
+  ]
+}
