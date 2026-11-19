@@ -1,0 +1,405 @@
+{
+  "title": "Hidrostática",
+  "examples": [
+    {
+      "section": "presion",
+      "id": "tanque",
+      "title": "Presión a 35 pies de profundidad",
+      "statement": "Un tanque abierto contiene agua. Obtén la presión manométrica a 35 ft de profundidad.",
+      "given": [
+        "h = 35 ft",
+        "γ = 62.4 lbf/ft³"
+      ],
+      "steps": [
+        [
+          "Aplicar equilibrio",
+          "pman = γh. La superficie libre está a presión atmosférica."
+        ],
+        [
+          "Sustituir",
+          "pman = 62.4 × 35 = 2184 lbf/ft²."
+        ],
+        [
+          "Convertir el área",
+          "1 ft² = 144 in²: pman = 2184/144 = 15.1667 psi ≈ 104.571 kPa."
+        ]
+      ],
+      "result": "pman ≈ 15.17 psi = 104.57 kPa.",
+      "diagram": {
+        "kind": "tank",
+        "h": 10.668
+      },
+      "source": "MF4C, ejemplo 5.1, p. 41; manual, «Presión en un tanque»."
+    },
+    {
+      "section": "presion",
+      "id": "dos-fluidos",
+      "title": "Tanque con aceite y agua",
+      "statement": "Un tanque abierto tiene 0.90 m de aceite sobre agua; el tirante total es 3.00 m.",
+      "given": [
+        "SGaceite = 0.80",
+        "γagua = 9810 N/m³",
+        "haceite = 0.90 m",
+        "hagua = 3.00 − 0.90 = 2.10 m"
+      ],
+      "steps": [
+        [
+          "Calcular el peso específico del aceite",
+          "γaceite = 0.80 × 9810 = 7848 N/m³."
+        ],
+        [
+          "Sumar las contribuciones",
+          "pman = γaceite haceite + γagua hagua."
+        ],
+        [
+          "Sustituir",
+          "pman = 7848 × 0.90 + 9810 × 2.10 = 27664.2 Pa."
+        ]
+      ],
+      "result": "Presión en el fondo ≈ 27.664 kPa manométricos. A igual profundidad, una columna solo de agua produciría 29.430 kPa.",
+      "diagram": {
+        "kind": "tank",
+        "h": 3,
+        "oil": 0.9
+      },
+      "source": "MF4C, ejemplo 5.2, p. 42; manual. Se utiliza el γ proporcionado; no se atribuye una temperatura al agua por la errata del enunciado."
+    },
+    {
+      "section": "presion",
+      "id": "barometro",
+      "title": "Barómetro de mercurio",
+      "statement": "Una lectura barométrica es de 772 mm de mercurio. Calcula la presión absoluta y la altura equivalente a la atmósfera estándar.",
+      "given": [
+        "ρHg = 13600 kg/m³ (dato adoptado)",
+        "g = 9.81 m/s²",
+        "h = 0.772 m",
+        "patm estándar = 101325 Pa"
+      ],
+      "steps": [
+        [
+          "Establecer la referencia",
+          "En el modelo se desprecia la presión de vapor sobre la columna: patm ≈ ρHgg h."
+        ],
+        [
+          "Calcular la lectura",
+          "patm ≈ 13600 × 9.81 × 0.772 = 102997.152 Pa."
+        ],
+        [
+          "Despejar la altura estándar",
+          "hestándar = 101325/(13600 × 9.81) ≈ 0.7595 m."
+        ]
+      ],
+      "result": "772 mm físicos de esta columna ≈ 102.997 kPa absolutos; altura estándar ≈ 759.5 mm. No se confunde esta densidad aproximada con la definición convencional de mmHg.",
+      "diagram": {
+        "kind": "barometer"
+      },
+      "source": "MF4C, ejemplo 5.3, p. 45; manual. Se explicitan densidad y gravedad adoptadas."
+    },
+    {
+      "section": "presion",
+      "id": "manometro-u",
+      "title": "Manómetro en U con agua y mercurio",
+      "statement": "Calcula la presión manométrica en A usando el recorrido de la figura: desde A se descienden 0.40 m de agua hasta la interfaz izquierda; la superficie derecha del mercurio está 0.25 m por encima de esa interfaz.",
+      "given": [
+        "γagua = 9810 N/m³",
+        "γHg = 133000 N/m³ (dato del manual)",
+        "Desnivel del mercurio = 0.25 m",
+        "Columna de agua desde A = 0.15 + 0.25 = 0.40 m"
+      ],
+      "steps": [
+        [
+          "Elegir un nivel común",
+          "En el mercurio conectado y en reposo, las presiones a igual elevación son iguales."
+        ],
+        [
+          "Recorrer desde la derecha",
+          "En la interfaz izquierda: pinterfaz = patm + γHg × 0.25."
+        ],
+        [
+          "Recorrer desde A",
+          "pinterfaz = pA + γagua × 0.40."
+        ],
+        [
+          "Despejar",
+          "pA − patm = 133000 × 0.25 − 9810 × 0.40 = 29326 Pa."
+        ]
+      ],
+      "result": "pA,man = 29.326 kPa. Este ejemplo tiene dos líquidos; la simulación de arriba aísla el caso de un solo líquido para mostrar el movimiento de las columnas.",
+      "diagram": {
+        "kind": "u-two"
+      },
+      "source": "MF4C, ejemplo 5.4, p. 46; manual, figura del manómetro."
+    },
+    {
+      "section": "presion",
+      "id": "dos-curvaturas",
+      "title": "Manómetro de dos curvaturas",
+      "statement": "Determina la presión en el punto 2 recorriendo el manómetro desde el extremo 1 abierto a la atmósfera. El recorrido baja 0.80 m en mercurio, sube 1.00 m en aire y baja 0.40 m en aceite.",
+      "given": [
+        "γHg = 133000 N/m³",
+        "γaceite = 7850 N/m³",
+        "Peso del aire despreciable"
+      ],
+      "steps": [
+        [
+          "Asignar signos",
+          "Al bajar se suma γh; al subir se resta. El tramo de aire no contribuye con la aproximación indicada."
+        ],
+        [
+          "Sumar incrementos",
+          "p₂,man = γHg(0.80) − γaire(1.00) + γaceite(0.40)."
+        ],
+        [
+          "Calcular",
+          "p₂,man = 106400 + 3140 = 109540 Pa."
+        ]
+      ],
+      "result": "p₂,man = 109.54 kPa ≈ 110 kPa.",
+      "diagram": {
+        "kind": "route"
+      },
+      "source": "MF4C, ejemplo 5.5, p. 47; manual."
+    },
+    {
+      "section": "fuerzas",
+      "id": "pared-un-lado",
+      "title": "Pared vertical con agua de un lado",
+      "statement": "Calcula la fuerza y el centro de presión de una pared de 2 m de ancho con un tirante de agua de 2.4 m. El otro lado está a presión atmosférica.",
+      "given": [
+        "b = 2 m",
+        "h = 2.4 m",
+        "γ = 9810 N/m³"
+      ],
+      "steps": [
+        [
+          "Área y centroide",
+          "A = bh = 4.8 m²; hc = h/2 = 1.2 m."
+        ],
+        [
+          "Integrar la presión",
+          "F = γAhc = γbh²/2 = 56505.6 N."
+        ],
+        [
+          "Ubicar la resultante",
+          "hcp = 2h/3 = 1.6 m bajo la superficie; está a h/3 = 0.8 m del fondo."
+        ]
+      ],
+      "result": "F ≈ 56.506 kN; centro de presión a 1.600 m bajo la superficie.",
+      "diagram": {
+        "kind": "wall",
+        "h": 2.4,
+        "right": 0,
+        "angle": 90
+      },
+      "source": "MF4C, ejemplo 5.6, p. 49; manual. Se usa SI en lugar de ton-fuerza."
+    },
+    {
+      "section": "fuerzas",
+      "id": "pared-dos-lados",
+      "title": "Pared vertical con agua de ambos lados",
+      "statement": "La misma pared separa tirantes de 2.4 m y 1.4 m medidos desde el mismo fondo. Determina la fuerza neta y su posición.",
+      "given": [
+        "b = 2 m",
+        "h₁ = 2.4 m; h₂ = 1.4 m",
+        "γ = 9810 N/m³"
+      ],
+      "steps": [
+        [
+          "Calcular cada fuerza",
+          "F₁ = γbh₁²/2 = 56.5056 kN; F₂ = γbh₂²/2 = 19.2276 kN."
+        ],
+        [
+          "Restar fuerzas opuestas",
+          "Fnet = F₁ − F₂ = 37.278 kN hacia el lado de menor tirante."
+        ],
+        [
+          "Equilibrar momentos desde el fondo",
+          "snet = [F₁(h₁/3) − F₂(h₂/3)]/Fnet ≈ 0.97193 m."
+        ],
+        [
+          "Referir a la superficie del lado 1",
+          "hcp = h₁ − snet ≈ 1.42807 m."
+        ]
+      ],
+      "result": "Fnet ≈ 37.278 kN; aplicación a 0.972 m sobre el fondo (1.428 m bajo la superficie del lado 1).",
+      "diagram": {
+        "kind": "wall",
+        "h": 2.4,
+        "right": 1.4,
+        "angle": 90
+      },
+      "source": "MF4C, ejemplo 5.7, p. 50; manual. Se corrige el denominador de la fórmula de posición impresa en el manual."
+    },
+    {
+      "section": "fuerzas",
+      "id": "pared-inclinada",
+      "title": "Pared inclinada con agua de ambos lados",
+      "statement": "Mantén los tirantes verticales de 2.4 m y 1.4 m y el ancho de 2 m; inclina la pared a 60° respecto a la horizontal.",
+      "given": [
+        "θ = 60°",
+        "b = 2 m",
+        "γ = 9810 N/m³",
+        "Panel suficientemente largo para cubrir los tirantes"
+      ],
+      "steps": [
+        [
+          "Distinguir profundidad de longitud",
+          "La longitud mojada es h/sen θ. La presión a una misma profundidad no cambia por inclinar la pared."
+        ],
+        [
+          "Calcular la fuerza normal",
+          "Fnet = γb(h₁² − h₂²)/(2 sen θ) = 37.278/sen 60° ≈ 43.045 kN."
+        ],
+        [
+          "Ubicar el centro de presión",
+          "Su distancia desde el fondo sobre la pared es 0.97193/sen 60° ≈ 1.122 m. La profundidad vertical bajo la superficie del lado 1 sigue siendo ≈ 1.428 m."
+        ]
+      ],
+      "result": "Fnet ≈ 43.045 kN, normal a la pared. La longitud mojada aumenta con estos tirantes verticales fijos.",
+      "diagram": {
+        "kind": "wall",
+        "h": 2.4,
+        "right": 1.4,
+        "angle": 60
+      },
+      "source": "MF4C, ejemplo 5.8, p. 51; manual. El ángulo se mide desde la horizontal."
+    },
+    {
+      "section": "fuerzas",
+      "id": "superficie-curva",
+      "title": "Fuerzas sobre una superficie curva",
+      "statement": "La superficie AB es un cuarto de círculo de radio 2 m y ancho 1 m. El centro C está a 4 m bajo la superficie; el punto A está 2 m más abajo que C. Hay agua sobre el arco y atmósfera en su cara inferior.",
+      "given": [
+        "R = 2 m; b = 1 m",
+        "Profundidad de C = 4 m",
+        "γ = 9810 N/m³"
+      ],
+      "steps": [
+        [
+          "Proyección vertical",
+          "La proyección tiene área 2 × 1 = 2 m² y centroide a 5 m de profundidad: FH = 9810 × 2 × 5 = 98.100 kN."
+        ],
+        [
+          "Volumen de agua sobre el arco",
+          "V = b[4R + πR²/4] = 8 + π ≈ 11.14159 m³. FV = γV ≈ 109.299 kN hacia abajo."
+        ],
+        [
+          "Sumar componentes",
+          "FR = √(FH² + FV²) ≈ 146.867 kN; α = atan(FV/FH) ≈ 48.09° bajo la horizontal."
+        ],
+        [
+          "Definir la línea de acción",
+          "Cada fuerza elemental es normal al arco circular y pasa por C. Por ello la línea de acción de la resultante también pasa por C. No significa que C sea un punto físico de aplicación sobre el arco."
+        ]
+      ],
+      "result": "FR ≈ 146.87 kN, dirigida a la derecha y abajo; su línea de acción pasa por el centro C.",
+      "diagram": {
+        "kind": "curve"
+      },
+      "source": "MF4C, ejemplo 5.9, p. 55; manual y su figura de la superficie curva."
+    },
+    {
+      "section": "flotacion",
+      "id": "corona",
+      "title": "La corona: composición por empuje",
+      "statement": "Una aleación de oro y plata tiene masa de 53.96 g. Sumergida en agua da una lectura aparente equivalente a 50.70 g. Determina su composición indicando qué tipo de porcentaje calculas.",
+      "given": [
+        "ρagua = 1 g/cm³",
+        "ρoro = 19.25 g/cm³",
+        "ρplata = 10.30 g/cm³",
+        "Volúmenes aditivos; sin poros y con la pieza totalmente sumergida"
+      ],
+      "steps": [
+        [
+          "Obtener el volumen por desplazamiento",
+          "V = (53.96 − 50.70)/1 = 3.26 cm³. Se interpretan los gramos del instrumento como masa aparente equivalente, no como unidad SI de fuerza."
+        ],
+        [
+          "Plantear masas y volúmenes",
+          "Voro + Vplata = 3.26; 19.25Voro + 10.30Vplata = 53.96."
+        ],
+        [
+          "Resolver",
+          "Voro = (53.96 − 10.30 × 3.26)/(19.25 − 10.30) ≈ 2.2773 cm³. Vplata ≈ 0.9827 cm³."
+        ],
+        [
+          "Distinguir las fracciones",
+          "La fracción volumétrica de oro es ≈ 69.86 %. La fracción másica es 19.25Voro/53.96 ≈ 81.24 %. Son porcentajes diferentes."
+        ]
+      ],
+      "result": "Oro ≈ 69.86 % en volumen y ≈ 81.24 % en masa; el resto es plata.",
+      "diagram": {
+        "kind": "crown"
+      },
+      "source": "MF4C, ejemplo 5.11, p. 58; manual. Se aclara que el ≈ 70 % del manual es fracción volumétrica, no másica."
+    },
+    {
+      "section": "flotacion",
+      "id": "cubo-bronce",
+      "title": "Cubo de bronce completamente sumergido",
+      "statement": "Un cubo de bronce de 0.50 m de arista se mantiene totalmente sumergido en agua. Determina la fuerza externa para equilibrarlo.",
+      "given": [
+        "γbronce = 86.9 kN/m³",
+        "γagua = 9.81 kN/m³",
+        "V = (0.50)³ = 0.125 m³"
+      ],
+      "steps": [
+        [
+          "Calcular el peso",
+          "W = γbronce V = 86.9 × 0.125 = 10.8625 kN."
+        ],
+        [
+          "Calcular el empuje",
+          "E = γagua V = 9.81 × 0.125 = 1.22625 kN."
+        ],
+        [
+          "Equilibrar fuerzas verticales",
+          "E + Fexterna − W = 0: Fexterna = W − E = 9.63625 kN hacia arriba."
+        ]
+      ],
+      "result": "Debe aplicarse una fuerza externa de ≈ 9.636 kN hacia arriba.",
+      "diagram": {
+        "kind": "bronze"
+      },
+      "source": "MF4C, ejemplo 5.12, p. 58; manual."
+    },
+    {
+      "section": "flotacion",
+      "id": "bloque-madera",
+      "title": "Bloque de madera: flotar no garantiza estabilidad",
+      "statement": "Un bloque homogéneo de 0.30 × 0.30 × 0.60 m pesa 318 N. Examina el equilibrio con la cara de 0.30 × 0.60 m horizontal.",
+      "given": [
+        "W = 318 N",
+        "γagua = 9810 N/m³",
+        "Área de flotación = 0.18 m²",
+        "Altura del bloque = 0.30 m; KG = 0.15 m"
+      ],
+      "steps": [
+        [
+          "Calcular el calado",
+          "d = W/(γA) = 318/(9810 × 0.18) ≈ 0.18009 m. Es menor que 0.30 m: el empuje puede equilibrar el peso."
+        ],
+        [
+          "Calcular el metacentro transversal",
+          "Vd = W/γ ≈ 0.032416 m³; Imin = 0.60(0.30)³/12 = 0.00135 m⁴; BM = Imin/Vd ≈ 0.04165 m."
+        ],
+        [
+          "Ubicar B, G y M",
+          "KB = d/2 ≈ 0.09004 m. GM = KB + BM − KG ≈ −0.01831 m."
+        ],
+        [
+          "Interpretar el signo",
+          "GM negativo significa que M está debajo de G: la orientación es inestable para pequeñas inclinaciones, aunque existe equilibrio vertical. Se requiere estudiar otra orientación si el bloque puede girar."
+        ]
+      ],
+      "result": "Calado ≈ 0.180 m; GM ≈ −18.31 mm. Flota, pero la orientación examinada es inestable.",
+      "diagram": {
+        "kind": "floating",
+        "weight": 318,
+        "rho": 1000
+      },
+      "source": "MF4C, ejemplo 5.13, p. 61; manual. Se corrigen la expresión de I y la interpretación del signo de GM."
+    }
+  ],
+  "source": "Adaptación de MF4C (2021), Unidad 2, pp. 37–61, y del capítulo Hidrostática de Manual_MF.zip, proporcionados por el docente. Las fórmulas, signos, unidades y resultados se revisaron al preparar esta unidad."
+}
