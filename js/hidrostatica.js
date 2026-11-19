@@ -5,7 +5,7 @@ function animate(kind,target,model,draw,baseline){
  const plot=$(kind+'-plot');if(frames[kind])cancelAnimationFrame(frames[kind]);
  const start=baseline||previous[kind]||target;
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
- const frame=now=>{const t=reduced?1:Math.min(1,(now-t0)/500),ease=1-(1-t)**3;const current=Object.fromEntries(Object.entries(target).map(([k,v])=>[k,start[k]===undefined?v:start[k]+(v-start[k])*ease]));plot.innerHTML=draw(model(current),'live-'+kind);previous[kind]=current;if(t<1)frames[kind]=requestAnimationFrame(frame);};
+ const frame=now=>{const t=reduced?1:Math.max(0,Math.min(1,(now-t0)/500)),ease=1-(1-t)**3;const current=Object.fromEntries(Object.entries(target).map(([k,v])=>[k,start[k]===undefined?v:start[k]+(v-start[k])*ease]));plot.innerHTML=draw(model(current),'live-'+kind);previous[kind]=current;if(t<1)frames[kind]=requestAnimationFrame(frame);};
  frames[kind]=requestAnimationFrame(frame);
 }
 function table(id,rows){const table=document.createElement('table');const caption=document.createElement('caption');caption.textContent='Estado final de equilibrio';table.append(caption);const body=document.createElement('tbody');for(const [name,value]of rows){const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');th.scope='row';th.textContent=name;td.textContent=value;tr.append(th,td);body.append(tr);}table.append(body);$(id+'-results').replaceChildren(table);}
