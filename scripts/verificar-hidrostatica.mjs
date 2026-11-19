@@ -18,7 +18,11 @@ assert.equal(floating({weight:529.74,rho:1000}).GM,null);assert.equal(floating({
 for(const rho of [850,1000,1025])for(const weight of [0,200,318,500,800]){const b=floating({weight,rho});near(b.E,rho*G*b.displaced);assert(b.displaced<=b.volume+1e-10);if(!b.sinks)near(b.E,weight);}
 assert.throws(()=>manometer({dp:NaN,rho:1000}));assert.throws(()=>wall({h:2,angle:0}));assert.throws(()=>floating({weight:-1,rho:1000}));
 const data=JSON.parse(fs.readFileSync(new URL('../data/cursos/mecanica-de-fluidos-unidad-2.json',import.meta.url),'utf8'));
-const html=fs.readFileSync(new URL('../cursos/mecanica-de-fluidos-unidad-2.html',import.meta.url),'utf8');assert.equal(data.examples.length,12);assert.equal((html.match(/class="example-columns"/g)||[]).length,12);assert.equal((html.match(/class="example-illustration"/g)||[]).length,12);
+const html=fs.readFileSync(new URL('../cursos/mecanica-de-fluidos-unidad-2.html',import.meta.url),'utf8');assert.equal(data.examples.length,12);assert.equal((html.match(/class="example-columns"/g)||[]).length,12);assert.equal((html.match(/class="example-illustration"/g)||[]).length,13);
 for(const id of ['laboratorio-u','laboratorio-pared','laboratorio-flotacion','presion-u2','fuerzas-u2','flotacion-u2'])assert(html.includes(`id="${id}"`));
 near(133000*.25-9810*.4,29326);near(133000*.8+7850*.4,109540);near(Math.hypot(98100,9810*(8+Math.PI)),146866.90107858134);
 console.log('Correcto: manómetro, signos, conservación de volumen, fuerzas por integración, panel parcialmente/totalmente sumergido, flotación, límites y 12 ejemplos.');
+
+assert(html.indexOf('id="ley-pascal"')<html.indexOf('id="presion-u2"'));
+for(const id of ['KBS4C5XPGgA','awwvDJ0J8Gw','mBCR5nYIVgQ'])assert(html.includes('youtube-nocookie.com/embed/'+id));
+assert(html.includes('#page=38'));
