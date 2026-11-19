@@ -1,0 +1,177 @@
+{
+  "title": "Hidrodinámica",
+  "examples": [
+    {
+      "id": "venturi",
+      "section": "medidores",
+      "title": "Venturi: de la diferencia de cargas a la velocidad",
+      "source": "MF4C.pdf, página 71 del archivo (ejemplo 6.1); también en el manual, capítulo Hidrodinámica.",
+      "statement": "Los tubos piezométricos muestran H₁ = 1.00 m y H₂ = 0.50 m. La continuidad establece V₂ = 2V₁. Encuentra la velocidad de la garganta.",
+      "given": [
+        "Flujo permanente e incompresible; sin pérdidas entre las tomas.",
+        "H = p/(ρg) + z; H₁ − H₂ = 0.50 m.",
+        "A₁/A₂ = 2; g = 9.81 m/s²."
+      ],
+      "steps": [
+        [
+          "Continuidad",
+          "A₁V₁ = A₂V₂ ⇒ V₂ = 2V₁."
+        ],
+        [
+          "Bernoulli",
+          "H₁ − H₂ = (V₂² − V₁²)/(2g) = 3V₁²/(2g)."
+        ],
+        [
+          "Despeje",
+          "V₁ = √(2g × 0.50/3) = 1.808 m/s; V₂ = 2V₁."
+        ]
+      ],
+      "result": "V₂ = 3.617 m/s. La garganta acelera el flujo y reduce su carga piezométrica.",
+      "kind": "venturi"
+    },
+    {
+      "id": "pitot",
+      "section": "medidores",
+      "title": "Pitot con manómetro: velocidad local del queroseno",
+      "source": "Manual de Mecánica de Fluidos, capítulo Hidrodinámica: aplicación del tubo de Pitot.",
+      "statement": "Un Pitot conectado a un manómetro de mercurio mide una diferencia vertical de 7 in en queroseno. Calcula la velocidad local.",
+      "given": [
+        "SG del queroseno = 0.81; SG del mercurio = 13.55.",
+        "ρref = 1000 kg/m³; y = 7 × 0.0254 = 0.1778 m.",
+        "Tomas a la misma elevación; modelo ideal."
+      ],
+      "steps": [
+        [
+          "Diferencia de presión",
+          "p₀ − p = (ρHg − ρq)gy. Se descuenta el peso de la columna de queroseno."
+        ],
+        [
+          "Conversión",
+          "Δp = (13550 − 810) × 9.81 × 0.1778 = 22.221 kPa."
+        ],
+        [
+          "Velocidad",
+          "V = √(2Δp/ρq) = 7.407 m/s."
+        ]
+      ],
+      "result": "Vlocal = 7.407 m/s. Una medición puntual no determina Q sin conocer el perfil o la velocidad media.",
+      "kind": "pitot"
+    },
+    {
+      "id": "orificio",
+      "section": "medidores",
+      "title": "Placa orificio: medición de caudal",
+      "source": "Manual de Mecánica de Fluidos, capítulo Hidrodinámica: análisis de un medidor de placa orificio.",
+      "statement": "Agua circula por una tubería de 24 cm con un orificio de 15 cm. El manómetro de mercurio registra 25 cm. Estima el caudal con el coeficiente combinado del manual.",
+      "given": [
+        "D = 0.24 m; d = 0.15 m; SGHg = 13.6.",
+        "ΔH = 0.25(13.6 − 1) = 3.15 m de agua.",
+        "K = 0.66: coeficiente combinado obtenido de la gráfica del manual."
+      ],
+      "steps": [
+        [
+          "Área del orificio",
+          "Ao = πd²/4 = 0.017671 m²."
+        ],
+        [
+          "Modelo calibrado",
+          "Q = K Ao √(2gΔH). K incorpora la contracción y el efecto de las áreas; no se identifica directamente con Cd."
+        ],
+        [
+          "Sustitución",
+          "Q = 0.66 × 0.017671 × √(2 × 9.81 × 3.15) = 0.09169 m³/s."
+        ]
+      ],
+      "result": "Q ≈ 91.69 L/s. K depende del medidor y su calibración; no es universal.",
+      "kind": "orifice"
+    },
+    {
+      "id": "perdida",
+      "section": "medidores",
+      "title": "Placa orificio: pérdida posterior a la vena contracta",
+      "source": "Manual de Mecánica de Fluidos, capítulo Hidrodinámica: pérdida de carga del medidor.",
+      "statement": "Para el caudal anterior, estima la pérdida por la expansión desde la vena contracta hasta la sección de la tubería.",
+      "given": [
+        "Se conservan D, d y Q del ejercicio anterior.",
+        "Coeficiente de contracción adoptado: Cc = 0.633.",
+        "Modelo aproximado de expansión súbita: hL = (Vc − V)²/(2g)."
+      ],
+      "steps": [
+        [
+          "Vena contracta",
+          "Ac = Cc Ao; Vc = Q/Ac = 8.197 m/s."
+        ],
+        [
+          "Velocidad en la tubería",
+          "V = Q/(πD²/4) = 2.027 m/s."
+        ],
+        [
+          "Pérdida de energía",
+          "hL = (8.197 − 2.027)²/(2 × 9.81) = 1.940 m."
+        ]
+      ],
+      "result": "hL ≈ 1.940 m. Es la estimación de esta expansión, no la diferencia piezométrica total de 3.15 m entre tomas.",
+      "kind": "orifice"
+    },
+    {
+      "id": "tanque",
+      "section": "continuidad",
+      "title": "Masa acumulada en un tanque",
+      "source": "Manual de Mecánica de Fluidos, capítulo Hidrodinámica: masa acumulada en un tanque.",
+      "statement": "Entra agua por una sección de 0.0025 m² a 7 m/s y sale a razón de 0.003 m³/s. ¿Con qué rapidez aumenta la masa almacenada?",
+      "given": [
+        "ρ = 1000 kg/m³, constante.",
+        "Sin fugas ni otras entradas o salidas.",
+        "El tanque puede acumular líquido: el flujo no es permanente en el volumen de control."
+      ],
+      "steps": [
+        [
+          "Entrada",
+          "Qin = Ain Vin = 0.0025 × 7 = 0.0175 m³/s."
+        ],
+        [
+          "Balance volumétrico",
+          "dV/dt = Qin − Qout = 0.0145 m³/s."
+        ],
+        [
+          "Balance de masa",
+          "dm/dt = ρ(Qin − Qout) = 14.5 kg/s."
+        ]
+      ],
+      "result": "La masa aumenta 14.5 kg/s. Para calcular dh/dt se necesita además el área horizontal del tanque.",
+      "kind": "tank"
+    },
+    {
+      "id": "vaciado",
+      "section": "bernoulli",
+      "title": "Tiempo para bajar el nivel de un depósito",
+      "source": "Manual de Mecánica de Fluidos, capítulo Hidrodinámica: tanque de drenaje y continuación.",
+      "statement": "Un tanque cilíndrico de 1 m de diámetro descarga por un orificio ideal de 0.10 m de diámetro. Calcula el tiempo para pasar de 2.00 m a 0.50 m de tirante.",
+      "given": [
+        "Tanque abierto, área horizontal constante; descarga a la atmósfera.",
+        "Sin entrada, sin pérdidas; se desprecia la velocidad de la superficie.",
+        "Ao/At = 0.01: tanque grande respecto al orificio."
+      ],
+      "steps": [
+        [
+          "Torricelli",
+          "Vsal = √(2gh). La velocidad cambia al bajar el nivel."
+        ],
+        [
+          "Continuidad no permanente",
+          "At dh/dt = −Ao √(2gh). No usar una sola velocidad para todo el vaciado."
+        ],
+        [
+          "Integración",
+          "t = [2At/(Ao√(2g))](√h₀ − √hf). El área Ao queda fuera de la raíz."
+        ],
+        [
+          "Sustitución",
+          "t = [2 × 100/√(19.62)](√2 − √0.5) = 31.93 s."
+        ]
+      ],
+      "result": "t ≈ 31.93 s. El modelo real requiere un coeficiente de descarga y las pérdidas correspondientes.",
+      "kind": "tank"
+    }
+  ]
+}
